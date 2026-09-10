@@ -1,0 +1,41 @@
+{
+  "built_at": "2026-09-10T21:10:34+00:00",
+  "counts": {
+    "routes": 19,
+    "routes_with_timetable": 10,
+    "routable_routes": 13,
+    "stations": 146,
+    "corridor_stations": 30,
+    "fare_bands": 9
+  },
+  "distance_model": "Per-leg distances are interpolated from each route's published total length in proportion to that leg's travel time. The website publishes no per-leg distances, and the fare table charges by kilometre, so fares computed from these distances are estimates; band boundaries and prices themselves are exact.",
+  "unregistered_stations": [],
+  "anomalies": [
+    "SR-02 [Chamkani to Kharkhano] Board Bazar: timetable implies 165s to next stop, page timeline prints 100s",
+    "SR-02 [Kharkhano to Chamkani] Hospital Chowk: timetable implies 25s to next stop, page timeline prints 105s",
+    "SR-02 [Kharkhano to Chamkani] Abdara Road: timetable implies 115s to next stop, page timeline prints 3300s",
+    "SR-02 [Kharkhano to Chamkani] Tehkal Bala: timetable implies 130s to next stop, page timeline prints 600s",
+    "SR-02 [Kharkhano to Chamkani] Tehkal Payyan: timetable implies 315s to next stop, page timeline prints 900s",
+    "SR-02 [Kharkhano to Chamkani] Malik Saad Shaheed: timetable implies 130s to next stop, page timeline prints 600s",
+    "DR-03B [Shah Alam Pull to Malik Saad Shaheed] Nasapa Bala: timetable implies 75s to next stop, page timeline prints 900s",
+    "ER-10 [Hospital Chowk to Kohat Adda] Mall of Hayatabad: timetable implies 280s to next stop, page timeline prints 430s",
+    "ER-10 [Hospital Chowk to Kohat Adda] Tehkal Payyan: timetable implies 290s to next stop, page timeline prints 120s",
+    "ER-10 [Hospital Chowk to Kohat Adda] Saddar Bazar: timetable implies 120s to next stop, page timeline prints 190s",
+    "ER-10 [Hospital Chowk to Kohat Adda] timeline and timetable disagree; only in timeline: ['islamia-college', 'mall-road']; only in timetable: ['bhana-marri', 'university-of-peshawar']",
+    "ER-10 [Kohat Adda to Hospital Chowk] Ghari Qamar Din: timetable implies 240s to next stop, page timeline prints 120s",
+    "ER-10 [Kohat Adda to Hospital Chowk] Technical College: timetable implies 675s to next stop, page timeline prints 240s",
+    "ER-10 [Kohat Adda to Hospital Chowk] Bhana Marri: timetable implies 145s to next stop, page timeline prints 675s",
+    "ER-10 [Kohat Adda to Hospital Chowk] Saddar Bazar: timetable implies 680s to next stop, page timeline prints 145s",
+    "ER-10 [Kohat Adda to Hospital Chowk] University of Peshawar: timetable implies 217s to next stop, page timeline prints 405s",
+    "ER-10 [Kohat Adda to Hospital Chowk] Mall of Hayatabad: timetable implies 298s to next stop, page timeline prints 217s",
+    "ER-10 [Kohat Adda to Hospital Chowk] timeline and timetable disagree; only in timeline: ['tehkal-payyan']; only in timetable: none",
+    "ER-10: direction station sets differ; only outbound: ['tehkal-payyan']; only inbound: none",
+    "DR-11: no stop sequence available (Runs through the dense Hayatabad stop cluster (I46-I87) where several routes overlap; the map crop does not separate them reliably.)",
+    "XER-15: no stop sequence available (A super-express overlay on the main corridor; the map does not mark which of the 30 corridor stations it skips.)",
+    "ER-16: no stop sequence available (Same Hayatabad cluster problem, plus a long shared corridor section.)",
+    "ER-12: published endpoint 'Mall of Hayatabad' is absent from its stop sequence, so that end of the route cannot be planned",
+    "DR-14: published endpoint 'Board Bazar' is absent from its stop sequence, so that end of the route cannot be planned",
+    "DR-14A: published endpoint 'Board Bazar' is absent from its stop sequence, so that end of the route cannot be planned"
+  ],
+  "integrity_failures": []
+}

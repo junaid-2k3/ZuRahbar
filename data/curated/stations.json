@@ -1,0 +1,3131 @@
+[
+  {
+    "station_id": "abasyn-university",
+    "name": "Abasyn University",
+    "aliases": [
+      "Abaseen University",
+      "Abasyn"
+    ],
+    "urdu": [
+      "ابا سین یونیورسٹی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "abdara-road",
+    "name": "Abdara Road",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "ER-09",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "achini",
+    "name": "Achini",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "askari-6-phase-1",
+    "name": "Askari 6 Phase 1",
+    "aliases": [
+      "Askari VI Phase 1",
+      "Askari 6 Ph 1"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "askari-6-phase-2",
+    "name": "Askari 6 Phase 2",
+    "aliases": [
+      "Askari VI Phase 2",
+      "Askari 6 Ph 2"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bab-e-peshawar",
+    "name": "Bab-e-Peshawar",
+    "aliases": [
+      "Bab e Peshawar",
+      "Babe Peshawar"
+    ],
+    "urdu": [
+      "باب پشاور"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-06",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bacha-khan-chowk",
+    "name": "Bacha Khan Chowk",
+    "aliases": [
+      "Bacha Khan Chock"
+    ],
+    "urdu": [
+      "باچا خان چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-03B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "badezai",
+    "name": "Badezai",
+    "aliases": [
+      "Badazai"
+    ],
+    "urdu": [
+      "بادیزئی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bagh-e-naran",
+    "name": "Bagh-e-Naran",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bakhshu-pul",
+    "name": "Bakhshu Pul",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bakht-khan-market",
+    "name": "Bakht Khan Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bangash-market",
+    "name": "Bangash Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bangash-park",
+    "name": "Bangash Park",
+    "aliases": [],
+    "urdu": [
+      "بنگش پارک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bara-gate",
+    "name": "Bara Gate",
+    "aliases": [
+      "Bara Adda"
+    ],
+    "urdu": [
+      "بارہ گیٹ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "basharat-market",
+    "name": "Basharat Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "bhana-marri",
+    "name": "Bhana Marri",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A",
+      "ER-10"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "board-bazar",
+    "name": "Board Bazar",
+    "aliases": [
+      "Board Bazaar",
+      "Board"
+    ],
+    "urdu": [
+      "بورڈ بازار"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-09",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "budhni-pul",
+    "name": "Budhni Pul",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "canal-bank-colony",
+    "name": "Canal Bank Colony",
+    "aliases": [
+      "Canal Bank"
+    ],
+    "urdu": [
+      "کینال بینک کالونی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "cecos-university",
+    "name": "CECOS University",
+    "aliases": [
+      "CECOS"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "chamkani",
+    "name": "Chamkani",
+    "aliases": [
+      "Chamkanni",
+      "Chamkani Terminal"
+    ],
+    "urdu": [
+      "چمکنی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B",
+      "DR-13",
+      "ER-01",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "chamkani-morr",
+    "name": "Chamkani Morr",
+    "aliases": [
+      "Chamkani Mor",
+      "Chamkani More",
+      "Chamkani Chowk"
+    ],
+    "urdu": [
+      "چمکنی موڑ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "charsadda-adda",
+    "name": "Charsadda Adda",
+    "aliases": [
+      "Charsada Adda"
+    ],
+    "urdu": [
+      "چارسدہ اڈہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "chughal-pura",
+    "name": "Chughal Pura",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "civil-colony",
+    "name": "Civil Colony",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "civil-quarters",
+    "name": "Civil Quarters",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "custom-chowk",
+    "name": "Custom Chowk",
+    "aliases": [
+      "Customs Chowk"
+    ],
+    "urdu": [
+      "کسٹم چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "dabgari-gardens",
+    "name": "Dabgari Gardens",
+    "aliases": [
+      "Dabgari Garden",
+      "Dabgari",
+      "Dabgari Bagh"
+    ],
+    "urdu": [
+      "ڈبگری گارڈن",
+      "ڈبگری"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-03A",
+      "ER-01",
+      "ER-09",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "deans-heigths",
+    "name": "Deans Heigths",
+    "aliases": [
+      "Deans Heights",
+      "Dean's Heights",
+      "Deans Trade Centre"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "dha",
+    "name": "DHA",
+    "aliases": [
+      "DHA Peshawar",
+      "Defence Housing Authority"
+    ],
+    "urdu": [
+      "ڈی ایچ اے"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "eid-gah",
+    "name": "Eid Gah",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "faisal-colony",
+    "name": "Faisal Colony",
+    "aliases": [
+      "Faisal Abad Colony"
+    ],
+    "urdu": [
+      "فیصل کالونی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "faqeer-abad",
+    "name": "Faqeer Abad",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "faqir-abad",
+    "name": "Faqir Abad",
+    "aliases": [
+      "Faqirabad",
+      "Fakirabad"
+    ],
+    "urdu": [
+      "فقیر آباد"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "fast-university",
+    "name": "Fast University",
+    "aliases": [
+      "FAST NUCES",
+      "FAST"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "fc-chowk",
+    "name": "FC Chowk",
+    "aliases": [
+      "F.C Chowk",
+      "FC Chowk Peshawar"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "football-ground",
+    "name": "Football Ground",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "fort",
+    "name": "Fort",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "ghari-qamar-din",
+    "name": "Ghari Qamar Din",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A",
+      "ER-10"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "gol-chowk",
+    "name": "Gol Chowk",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "DR-07",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "government-college",
+    "name": "Government College",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "govt-girls-degree-college",
+    "name": "Govt. Girls Degree College",
+    "aliases": [
+      "Government Girls Degree College"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "govt-girls-primary-school",
+    "name": "Govt. Girls Primary School",
+    "aliases": [
+      "Government Girls Primary School"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "gulbahar-chowk",
+    "name": "Gulbahar Chowk",
+    "aliases": [
+      "Gulbahar"
+    ],
+    "urdu": [
+      "گلبہار چوک",
+      "گلبہار"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-09",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "gulshan-rehman-colony",
+    "name": "Gulshan Rehman Colony",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "habib-abad",
+    "name": "Habib Abad",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "haji-camp",
+    "name": "Haji Camp",
+    "aliases": [
+      "Haji Camp Adda"
+    ],
+    "urdu": [
+      "حاجی کیمپ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "hashtnagri",
+    "name": "Hashtnagri",
+    "aliases": [
+      "Hashnaghri",
+      "Hashtnaghri"
+    ],
+    "urdu": [
+      "ہشتنگری"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-01",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "hayatabad-phase-3",
+    "name": "Hayatabad Phase 3",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06",
+      "ER-10",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "hospital-chowk",
+    "name": "Hospital Chowk",
+    "aliases": [
+      "Hayatabad Hospital Chowk",
+      "KTH Chowk"
+    ],
+    "urdu": [
+      "ہسپتال چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-10",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "ibrahim-abad",
+    "name": "Ibrahim Abad",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "imsciences",
+    "name": "IMSciences",
+    "aliases": [
+      "IM Sciences",
+      "Institute of Management Sciences"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "industrial-estate",
+    "name": "Industrial Estate",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "iqra-university",
+    "name": "Iqra University",
+    "aliases": [
+      "Iqra"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "islamia-college",
+    "name": "Islamia College",
+    "aliases": [
+      "Islamia College Peshawar",
+      "ICP"
+    ],
+    "urdu": [
+      "اسلامیہ کالج"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "itwar-bazar",
+    "name": "Itwar Bazar",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "jhagra",
+    "name": "Jhagra",
+    "aliases": [
+      "Jhagra Stop"
+    ],
+    "urdu": [
+      "جھگڑہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "judicial-complex",
+    "name": "Judicial Complex",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "kabotar-chowk",
+    "name": "Kabotar Chowk",
+    "aliases": [
+      "Kabootar Chowk"
+    ],
+    "urdu": [
+      "کبوتر چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "kajor-stop",
+    "name": "Kajor Stop",
+    "aliases": [
+      "Kajori",
+      "Kajor"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "kala-mandi",
+    "name": "Kala Mandi",
+    "aliases": [
+      "Kalan Mandi"
+    ],
+    "urdu": [
+      "کالا منڈی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "kambo-adda",
+    "name": "Kambo Adda",
+    "aliases": [
+      "Kambo"
+    ],
+    "urdu": [
+      "کمبو اڈہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "karkhano-chowk",
+    "name": "Karkhano Chowk",
+    "aliases": [
+      "Kharkhano Chowk"
+    ],
+    "urdu": [
+      "کارخانو چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "karkhano-market",
+    "name": "Karkhano Market",
+    "aliases": [
+      "Kharkhano",
+      "Karkhano",
+      "Karkhano Mkt",
+      "Karkhanoo",
+      "Karkhano Bazar"
+    ],
+    "urdu": [
+      "کارخانو مارکیٹ",
+      "کارخانو"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-07",
+      "ER-01",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "khazana",
+    "name": "Khazana",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "khyber-bazar",
+    "name": "Khyber Bazar",
+    "aliases": [
+      "Khyber Bazaar"
+    ],
+    "urdu": [
+      "خیبر بازار"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-01",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "khyber-super-market",
+    "name": "Khyber Super Market",
+    "aliases": [
+      "Khyber Super",
+      "Khyber Supermarket"
+    ],
+    "urdu": [
+      "خیبر سپر مارکیٹ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "kohat-adda",
+    "name": "Kohat Adda",
+    "aliases": [
+      "Kohat Adda Terminal"
+    ],
+    "urdu": [
+      "کوہاٹ اڈہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-03A",
+      "ER-10"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "lahore-adda",
+    "name": "Lahore Adda",
+    "aliases": [
+      "Lahori Adda",
+      "Lahore Adda Stop"
+    ],
+    "urdu": [
+      "لاہور اڈہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-01",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "lalazar",
+    "name": "Lalazar",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06",
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "landey-sarrak",
+    "name": "Landey Sarrak",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "landi-arbab",
+    "name": "Landi Arbab",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "madrassa",
+    "name": "Madrassa",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "malik-saad-market",
+    "name": "Malik Saad Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "malik-saad-shaheed",
+    "name": "Malik Saad Shaheed",
+    "aliases": [
+      "Malik Saad",
+      "Malik Saad Shaheed Flyover"
+    ],
+    "urdu": [
+      "ملک سعد شہید"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "DR-04B",
+      "ER-01",
+      "ER-09",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "mall-of-hayatabad",
+    "name": "Mall of Hayatabad",
+    "aliases": [
+      "Hayatabad Mall",
+      "Mall Hayatabad",
+      "Hayatabad"
+    ],
+    "urdu": [
+      "مال آف حیات آباد",
+      "حیات آباد"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "DR-06",
+      "ER-01",
+      "ER-10",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "mall-road",
+    "name": "Mall Road",
+    "aliases": [
+      "The Mall",
+      "Mall Road Peshawar"
+    ],
+    "urdu": [
+      "مال روڈ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "masjid-abu-bakr",
+    "name": "Masjid Abu Bakr",
+    "aliases": [
+      "Abu Bakr Mosque"
+    ],
+    "urdu": [
+      "مسجد ابوبکر"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "masjid-abu-huraira",
+    "name": "Masjid Abu Huraira",
+    "aliases": [
+      "Abu Huraira Mosque"
+    ],
+    "urdu": [
+      "مسجد ابو ہریرہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "masjid-e-hamza",
+    "name": "Masjid e Hamza",
+    "aliases": [
+      "Masjid Hamza"
+    ],
+    "urdu": [
+      "مسجد حمزہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "masjid-khalid-bin-waleed",
+    "name": "Masjid Khalid bin Waleed",
+    "aliases": [
+      "Khalid bin Waleed Mosque"
+    ],
+    "urdu": [
+      "مسجد خالد بن ولید"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "masjid-umar-farooq",
+    "name": "Masjid Umar Farooq",
+    "aliases": [
+      "Umar Farooq Mosque"
+    ],
+    "urdu": [
+      "مسجد عمر فاروق"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "mian-khan-garhi",
+    "name": "Mian Khan Garhi",
+    "aliases": [
+      "Mian Khan Gari"
+    ],
+    "urdu": [
+      "میاں خان گڑھی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "mmc-hospital",
+    "name": "MMC Hospital",
+    "aliases": [
+      "MMC",
+      "Mercy Medical Complex"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "motorway-bridge",
+    "name": "Motorway Bridge",
+    "aliases": [
+      "Motorway Pul",
+      "M1 Bridge"
+    ],
+    "urdu": [
+      "موٹروے پل"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "muslim-abad",
+    "name": "Muslim Abad",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "nasapa",
+    "name": "Nasapa",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "nasapa-bala",
+    "name": "Nasapa Bala",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "naseer-teaching-hospital",
+    "name": "Naseer Teaching Hospital",
+    "aliases": [
+      "Naseer Hospital",
+      "Naseerullah Babar Hospital"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "nawab-market",
+    "name": "Nawab Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "nishat-mill",
+    "name": "Nishat Mill",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "old-haji-camp",
+    "name": "Old Haji Camp",
+    "aliases": [
+      "Purana Haji Camp"
+    ],
+    "urdu": [
+      "پرانا حاجی کیمپ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pabbi-bazar",
+    "name": "Pabbi Bazar",
+    "aliases": [
+      "Pabbi Bazaar"
+    ],
+    "urdu": [
+      "پبی بازار"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pabbi-railway-station",
+    "name": "Pabbi Railway Station",
+    "aliases": [
+      "Pabbi Station"
+    ],
+    "urdu": [
+      "پبی ریلوے اسٹیشن"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pabbi-terminal",
+    "name": "Pabbi Terminal",
+    "aliases": [
+      "Pabbi",
+      "Pabbi Adda"
+    ],
+    "urdu": [
+      "پبی ٹرمینل",
+      "پبی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pahari-pura",
+    "name": "Pahari Pura",
+    "aliases": [
+      "Pahari Pura Chowk",
+      "Paharipura"
+    ],
+    "urdu": [
+      "پہاڑی پورہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "patang-chowk",
+    "name": "Patang Chowk",
+    "aliases": [
+      "Patang"
+    ],
+    "urdu": [
+      "پتنگ چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pda-office",
+    "name": "PDA Office",
+    "aliases": [
+      "PDA"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "phase-6-terminal",
+    "name": "Phase 6 Terminal",
+    "aliases": [
+      "Phase-6 Terminal",
+      "Phase 6",
+      "Hayatabad Phase 6"
+    ],
+    "urdu": [
+      "فیز 6 ٹرمینل"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "phase-7-chowk",
+    "name": "Phase 7 Chowk",
+    "aliases": [
+      "Phase-7 Chowk"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "phase-7-terminal",
+    "name": "Phase 7 Terminal",
+    "aliases": [
+      "Phase-7 Terminal",
+      "Phase 7",
+      "Hayatabad Phase 7"
+    ],
+    "urdu": [
+      "فیز 7 ٹرمینل"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-06",
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pir-zakori-bridge",
+    "name": "Pir Zakori Bridge",
+    "aliases": [
+      "Pir Zakori Pul",
+      "Pir Zakori"
+    ],
+    "urdu": [
+      "پیر زکوڑی پل"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pishtakhara-chowk",
+    "name": "Pishtakhara Chowk",
+    "aliases": [
+      "Pishtakhara",
+      "Pishtakhra Chowk"
+    ],
+    "urdu": [
+      "پشتہ خرہ چوک",
+      "پشتہ خرہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pishtakhara-thana",
+    "name": "Pishtakhara Thana",
+    "aliases": [
+      "Pishtakhara Police Station"
+    ],
+    "urdu": [
+      "پشتہ خرہ تھانہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "police-colony",
+    "name": "Police Colony",
+    "aliases": [],
+    "urdu": [
+      "پولیس کالونی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "professor-model-town",
+    "name": "Professor Model Town",
+    "aliases": [
+      "Professor Colony",
+      "Professor Town"
+    ],
+    "urdu": [
+      "پروفیسر ماڈل ٹاؤن"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "pso-stop",
+    "name": "PSO Stop",
+    "aliases": [
+      "PSO Pump"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "ptcl-office",
+    "name": "PTCL Office",
+    "aliases": [
+      "PTCL"
+    ],
+    "urdu": [
+      "پی ٹی سی ایل آفس"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "railway-station",
+    "name": "Railway Station",
+    "aliases": [
+      "Peshawar Cantt Station",
+      "Peshawar Railway Station",
+      "Cantt Station"
+    ],
+    "urdu": [
+      "ریلوے اسٹیشن"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "rashakai",
+    "name": "Rashakai",
+    "aliases": [
+      "Rashakai Stop"
+    ],
+    "urdu": [
+      "رشکئی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "regi-model-town",
+    "name": "Regi Model Town",
+    "aliases": [
+      "Regi",
+      "Regi Model Town Peshawar"
+    ],
+    "urdu": [
+      "ریگی ماڈل ٹاؤن",
+      "ریگی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-14",
+      "DR-14A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "rehman-baba-market",
+    "name": "Rehman Baba Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "ring-road-bridge",
+    "name": "Ring road Bridge",
+    "aliases": [
+      "Ring Road",
+      "Ring Road Pul"
+    ],
+    "urdu": [
+      "رنگ روڈ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "saddar-bazar",
+    "name": "Saddar Bazar",
+    "aliases": [
+      "Sadar",
+      "Sadar Bazar",
+      "Saddar",
+      "Saddar Bazaar",
+      "Sadar Bazaar",
+      "Sadr Bazar"
+    ],
+    "urdu": [
+      "صدر بازار",
+      "صدر"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-01",
+      "ER-09",
+      "ER-10",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "sardar-garhi",
+    "name": "Sardar Garhi",
+    "aliases": [
+      "Sardar Garhi Stop",
+      "Sardargarhi"
+    ],
+    "urdu": [
+      "سردار گڑھی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13",
+      "ER-01",
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "sewan",
+    "name": "Sewan",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shah-alam-pul",
+    "name": "Shah Alam Pul",
+    "aliases": [
+      "Shah Alam Pull",
+      "Shah Alam Bridge",
+      "Shahalam Pul"
+    ],
+    "urdu": [
+      "شاہ عالم پل"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shahad-market",
+    "name": "Shahad Market",
+    "aliases": [
+      "Shahad Bazar"
+    ],
+    "urdu": [
+      "شہد مارکیٹ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shaheed-saqib-ghani-school",
+    "name": "Shaheed Saqib Ghani School",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shaheed-tehseen-chowk",
+    "name": "Shaheed Tehseen Chowk",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shahi-bagh",
+    "name": "Shahi Bagh",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shalman-park",
+    "name": "Shalman Park",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shamali-market",
+    "name": "Shamali Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shero-jhangi",
+    "name": "Shero Jhangi",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "shoba-bazar",
+    "name": "Shoba Bazar",
+    "aliases": [
+      "Shuba Bazar",
+      "Shoba Bazaar"
+    ],
+    "urdu": [
+      "شعبہ بازار"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "stadium-chowk",
+    "name": "Stadium Chowk",
+    "aliases": [
+      "Arbab Niaz Stadium",
+      "Stadium"
+    ],
+    "urdu": [
+      "اسٹیڈیم چوک"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "sugar-mill",
+    "name": "Sugar Mill",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B",
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "swatu-pattak",
+    "name": "Swatu Pattak",
+    "aliases": [
+      "Swati Pattak",
+      "Swatu Patak"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-04A"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "tarnab-farm",
+    "name": "Tarnab Farm",
+    "aliases": [
+      "Tarnab",
+      "Tarnab Farms"
+    ],
+    "urdu": [
+      "ترناب فارم"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "taru-jaba",
+    "name": "Taru Jaba",
+    "aliases": [
+      "Taru Jabba"
+    ],
+    "urdu": [
+      "ترو جبہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "tatara-park",
+    "name": "Tatara Park",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "SR-02"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "tauda",
+    "name": "Tauda",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "technical-college",
+    "name": "Technical College",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03A",
+      "ER-10"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "tehkal-bala",
+    "name": "Tehkal Bala",
+    "aliases": [
+      "Takhal Bala"
+    ],
+    "urdu": [
+      "تہکال بالا"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "tehkal-payyan",
+    "name": "Tehkal Payyan",
+    "aliases": [
+      "Tehkal Payan",
+      "Takhal Payan"
+    ],
+    "urdu": [
+      "تہکال پایان"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-10",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "tevta",
+    "name": "TEVTA",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-07"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "toda",
+    "name": "Toda",
+    "aliases": [],
+    "urdu": [
+      "توڑہ"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "university-of-peshawar",
+    "name": "University of Peshawar",
+    "aliases": [
+      "UoP",
+      "Peshawar University",
+      "University Of Peshawar",
+      "Uni of Peshawar"
+    ],
+    "urdu": [
+      "یونیورسٹی آف پشاور",
+      "پشاور یونیورسٹی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-01",
+      "ER-09",
+      "ER-10",
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "university-town",
+    "name": "University Town",
+    "aliases": [
+      "Uni Town",
+      "University Town Peshawar"
+    ],
+    "urdu": [
+      "یونیورسٹی ٹاؤن"
+    ],
+    "pashto": [],
+    "served_by": [
+      "SR-02",
+      "SR-08"
+    ],
+    "is_corridor_station": true,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "wahid-garhi",
+    "name": "Wahid Garhi",
+    "aliases": [
+      "Wahid Gari"
+    ],
+    "urdu": [
+      "واحد گڑھی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "ER-12"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "wahid-ghari",
+    "name": "Wahid Ghari",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-03B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "wapda-town",
+    "name": "Wapda Town",
+    "aliases": [
+      "WAPDA Town Peshawar"
+    ],
+    "urdu": [
+      "واپڈا ٹاؤن"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-13"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "wazir-colony",
+    "name": "Wazir Colony",
+    "aliases": [],
+    "urdu": [
+      "وزیر کالونی"
+    ],
+    "pashto": [],
+    "served_by": [
+      "DR-04B"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "yousafzai-market",
+    "name": "Yousafzai Market",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-05",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "zarghuni-masjid",
+    "name": "Zarghuni Masjid",
+    "aliases": [],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-06",
+      "DR-07",
+      "ER-09"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  },
+  {
+    "station_id": "zone-3-ground",
+    "name": "Zone 3 Ground",
+    "aliases": [
+      "Zone 3",
+      "Zone Three Ground"
+    ],
+    "urdu": [],
+    "pashto": [],
+    "served_by": [
+      "DR-14"
+    ],
+    "is_corridor_station": false,
+    "provenance": {
+      "source_url": "https://transpeshawar.pk/passenger-services/operation-schedule/",
+      "source_type": "html_table",
+      "retrieved_at": "2026-09-10T21:10:34+00:00",
+      "verified_by": null,
+      "note": "parsed from the per-route timetables on the operation schedule page"
+    }
+  }
+]

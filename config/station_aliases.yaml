@@ -1,0 +1,1132 @@
+# Canonical station registry for ZuRehbar.
+#
+# `name` is the spelling Rehbar uses when it speaks to a rider. `aliases` holds
+# every other spelling that must resolve to the same station: variants printed on
+# transpeshawar.pk, common Roman-Urdu spellings, and short forms riders actually
+# say. `urdu` and `pashto` hold the script forms. Seeded from the operation
+# schedule parse, then extended by hand.
+
+stations:
+  abasyn-university:
+    aliases:
+    - Abaseen University
+    - Abasyn
+    name: Abasyn University
+    served_by:
+    - DR-04B
+    urdu:
+    - ابا سین یونیورسٹی
+  abdara-road:
+    aliases: []
+    name: Abdara Road
+    served_by:
+    - ER-09
+    - SR-02
+    - SR-08
+  achini:
+    aliases: []
+    name: Achini
+    served_by:
+    - DR-05
+  askari-6-phase-1:
+    aliases:
+    - Askari VI Phase 1
+    - Askari 6 Ph 1
+    name: Askari 6 Phase 1
+    served_by:
+    - DR-14
+    - DR-14A
+  askari-6-phase-2:
+    aliases:
+    - Askari VI Phase 2
+    - Askari 6 Ph 2
+    name: Askari 6 Phase 2
+    served_by:
+    - DR-14
+    - DR-14A
+  bab-e-peshawar:
+    aliases:
+    - Bab e Peshawar
+    - Babe Peshawar
+    name: Bab-e-Peshawar
+    served_by:
+    - DR-06
+    - SR-02
+    urdu:
+    - باب پشاور
+  bacha-khan-chowk:
+    aliases:
+    - Bacha Khan Chock
+    name: Bacha Khan Chowk
+    served_by:
+    - DR-03B
+    urdu:
+    - باچا خان چوک
+  badezai:
+    aliases:
+    - Badazai
+    name: Badezai
+    served_by:
+    - DR-14
+    - DR-14A
+    urdu:
+    - بادیزئی
+  bagh-e-naran:
+    aliases: []
+    name: Bagh-e-Naran
+    served_by:
+    - DR-06
+  bakhshu-pul:
+    aliases: []
+    name: Bakhshu Pul
+    served_by:
+    - DR-03B
+  bakht-khan-market:
+    aliases: []
+    name: Bakht Khan Market
+    served_by:
+    - DR-05
+  bangash-market:
+    aliases: []
+    name: Bangash Market
+    served_by:
+    - DR-07
+  bangash-park:
+    aliases: []
+    name: Bangash Park
+    served_by:
+    - DR-14
+    urdu:
+    - بنگش پارک
+  bara-gate:
+    aliases:
+    - Bara Adda
+    name: Bara Gate
+    served_by:
+    - DR-04A
+    urdu:
+    - بارہ گیٹ
+  basharat-market:
+    aliases: []
+    name: Basharat Market
+    served_by:
+    - DR-05
+    - ER-09
+  bhana-marri:
+    aliases: []
+    name: Bhana Marri
+    served_by:
+    - DR-03A
+    - ER-10
+  board-bazar:
+    aliases:
+    - Board Bazaar
+    - Board
+    name: Board Bazar
+    served_by:
+    - ER-09
+    - SR-02
+    - SR-08
+    urdu:
+    - بورڈ بازار
+  budhni-pul:
+    aliases: []
+    name: Budhni Pul
+    served_by:
+    - DR-03B
+  canal-bank-colony:
+    aliases:
+    - Canal Bank
+    name: Canal Bank Colony
+    served_by:
+    - DR-14
+    - DR-14A
+    urdu:
+    - کینال بینک کالونی
+  cecos-university:
+    aliases:
+    - CECOS
+    name: CECOS University
+    served_by:
+    - DR-05
+  chamkani:
+    aliases:
+    - Chamkanni
+    - Chamkani Terminal
+    name: Chamkani
+    served_by:
+    - ER-01
+    - SR-02
+    urdu:
+    - چمکنی
+  chamkani-morr:
+    aliases:
+    - Chamkani Mor
+    - Chamkani More
+    - Chamkani Chowk
+    name: Chamkani Morr
+    served_by:
+    - DR-13
+    urdu:
+    - چمکنی موڑ
+  charsadda-adda:
+    aliases:
+    - Charsada Adda
+    name: Charsadda Adda
+    served_by:
+    - DR-03B
+    urdu:
+    - چارسدہ اڈہ
+  chughal-pura:
+    aliases: []
+    name: Chughal Pura
+    served_by:
+    - SR-02
+  civil-colony:
+    aliases: []
+    name: Civil Colony
+    served_by:
+    - DR-03A
+  civil-quarters:
+    aliases: []
+    name: Civil Quarters
+    served_by:
+    - DR-03A
+  custom-chowk:
+    aliases:
+    - Customs Chowk
+    name: Custom Chowk
+    served_by:
+    - DR-04A
+    urdu:
+    - کسٹم چوک
+  dabgari-gardens:
+    aliases:
+    - Dabgari Garden
+    - Dabgari
+    - Dabgari Bagh
+    name: Dabgari Gardens
+    served_by:
+    - DR-03A
+    - ER-01
+    - ER-09
+    - SR-02
+    - SR-08
+    urdu:
+    - ڈبگری گارڈن
+    - ڈبگری
+  deans-heigths:
+    aliases:
+    - Deans Heights
+    - Dean's Heights
+    - Deans Trade Centre
+    name: Deans Heigths
+    served_by:
+    - DR-07
+  dha:
+    aliases:
+    - DHA Peshawar
+    - Defence Housing Authority
+    name: DHA
+    served_by:
+    - DR-14A
+    urdu:
+    - ڈی ایچ اے
+  eid-gah:
+    aliases: []
+    name: Eid Gah
+    served_by:
+    - DR-03B
+  faisal-colony:
+    aliases:
+    - Faisal Abad Colony
+    name: Faisal Colony
+    served_by:
+    - SR-02
+    urdu:
+    - فیصل کالونی
+  faqeer-abad:
+    aliases: []
+    name: Faqeer Abad
+    served_by:
+    - DR-03B
+  faqir-abad:
+    aliases:
+    - Faqirabad
+    - Fakirabad
+    name: Faqir Abad
+    served_by:
+    - ER-12
+    urdu:
+    - فقیر آباد
+  fast-university:
+    aliases:
+    - FAST NUCES
+    - FAST
+    name: Fast University
+    served_by:
+    - DR-07
+  fc-chowk:
+    aliases:
+    - F.C Chowk
+    - FC Chowk Peshawar
+    name: FC Chowk
+    served_by:
+    - SR-02
+    - SR-08
+  football-ground:
+    aliases: []
+    name: Football Ground
+    served_by:
+    - DR-06
+  fort:
+    aliases: []
+    name: Fort
+    served_by:
+    - DR-07
+  ghari-qamar-din:
+    aliases: []
+    name: Ghari Qamar Din
+    served_by:
+    - DR-03A
+    - ER-10
+  gol-chowk:
+    aliases: []
+    name: Gol Chowk
+    served_by:
+    - DR-05
+    - DR-07
+    - ER-09
+  government-college:
+    aliases: []
+    name: Government College
+    served_by:
+    - DR-05
+  govt-girls-degree-college:
+    aliases:
+    - Government Girls Degree College
+    name: Govt. Girls Degree College
+    served_by:
+    - DR-13
+  govt-girls-primary-school:
+    aliases:
+    - Government Girls Primary School
+    name: Govt. Girls Primary School
+    served_by:
+    - DR-14
+  gulbahar-chowk:
+    aliases:
+    - Gulbahar
+    name: Gulbahar Chowk
+    served_by:
+    - ER-09
+    - SR-02
+    - SR-08
+    urdu:
+    - گلبہار چوک
+    - گلبہار
+  gulshan-rehman-colony:
+    aliases: []
+    name: Gulshan Rehman Colony
+    served_by:
+    - DR-03A
+  habib-abad:
+    aliases: []
+    name: Habib Abad
+    served_by:
+    - DR-03B
+  haji-camp:
+    aliases:
+    - Haji Camp Adda
+    name: Haji Camp
+    served_by:
+    - DR-06
+    urdu:
+    - حاجی کیمپ
+  hashtnagri:
+    aliases:
+    - Hashnaghri
+    - Hashtnaghri
+    name: Hashtnagri
+    served_by:
+    - ER-01
+    - SR-02
+    - SR-08
+    urdu:
+    - ہشتنگری
+  hayatabad-phase-3:
+    aliases: []
+    name: Hayatabad Phase 3
+    served_by:
+    - DR-06
+    - ER-10
+    - SR-02
+  hospital-chowk:
+    aliases:
+    - Hayatabad Hospital Chowk
+    - KTH Chowk
+    name: Hospital Chowk
+    served_by:
+    - ER-10
+    - SR-02
+    urdu:
+    - ہسپتال چوک
+  ibrahim-abad:
+    aliases: []
+    name: Ibrahim Abad
+    served_by:
+    - DR-03B
+  imsciences:
+    aliases:
+    - IM Sciences
+    - Institute of Management Sciences
+    name: IMSciences
+    served_by:
+    - DR-06
+  industrial-estate:
+    aliases: []
+    name: Industrial Estate
+    served_by:
+    - DR-07
+  iqra-university:
+    aliases:
+    - Iqra
+    name: Iqra University
+    served_by:
+    - DR-06
+  islamia-college:
+    aliases:
+    - Islamia College Peshawar
+    - ICP
+    name: Islamia College
+    served_by:
+    - SR-02
+    - SR-08
+    urdu:
+    - اسلامیہ کالج
+  itwar-bazar:
+    aliases: []
+    name: Itwar Bazar
+    served_by:
+    - DR-05
+    - DR-06
+  jhagra:
+    aliases:
+    - Jhagra Stop
+    name: Jhagra
+    served_by:
+    - DR-13
+    urdu:
+    - جھگڑہ
+  judicial-complex:
+    aliases: []
+    name: Judicial Complex
+    served_by:
+    - DR-06
+  kabotar-chowk:
+    aliases:
+    - Kabootar Chowk
+    name: Kabotar Chowk
+    served_by:
+    - DR-04B
+    urdu:
+    - کبوتر چوک
+  kajor-stop:
+    aliases:
+    - Kajori
+    - Kajor
+    name: Kajor Stop
+    served_by:
+    - DR-13
+  kala-mandi:
+    aliases:
+    - Kalan Mandi
+    name: Kala Mandi
+    served_by:
+    - DR-13
+    urdu:
+    - کالا منڈی
+  kambo-adda:
+    aliases:
+    - Kambo
+    name: Kambo Adda
+    served_by:
+    - DR-04B
+    urdu:
+    - کمبو اڈہ
+  karkhano-chowk:
+    aliases:
+    - Kharkhano Chowk
+    name: Karkhano Chowk
+    served_by:
+    - DR-07
+    urdu:
+    - کارخانو چوک
+  karkhano-market:
+    aliases:
+    - Kharkhano
+    - Karkhano
+    - Karkhano Mkt
+    - Karkhanoo
+    - Karkhano Bazar
+    name: Karkhano Market
+    served_by:
+    - DR-07
+    - ER-01
+    - SR-02
+    urdu:
+    - کارخانو مارکیٹ
+    - کارخانو
+  khazana:
+    aliases: []
+    name: Khazana
+    served_by:
+    - DR-03B
+  khyber-bazar:
+    aliases:
+    - Khyber Bazaar
+    name: Khyber Bazar
+    served_by:
+    - ER-01
+    - SR-02
+    - SR-08
+    urdu:
+    - خیبر بازار
+  khyber-super-market:
+    aliases:
+    - Khyber Super
+    - Khyber Supermarket
+    name: Khyber Super Market
+    served_by:
+    - DR-04A
+    urdu:
+    - خیبر سپر مارکیٹ
+  kohat-adda:
+    aliases:
+    - Kohat Adda Terminal
+    name: Kohat Adda
+    served_by:
+    - DR-03A
+    - ER-10
+    urdu:
+    - کوہاٹ اڈہ
+  lahore-adda:
+    aliases:
+    - Lahori Adda
+    - Lahore Adda Stop
+    name: Lahore Adda
+    served_by:
+    - ER-01
+    - SR-02
+    urdu:
+    - لاہور اڈہ
+  lalazar:
+    aliases: []
+    name: Lalazar
+    served_by:
+    - DR-06
+    - DR-07
+  landey-sarrak:
+    aliases: []
+    name: Landey Sarrak
+    served_by:
+    - DR-03B
+  landi-arbab:
+    aliases: []
+    name: Landi Arbab
+    served_by:
+    - DR-03A
+  madrassa:
+    aliases: []
+    name: Madrassa
+    served_by:
+    - DR-06
+  malik-saad-market:
+    aliases: []
+    name: Malik Saad Market
+    served_by:
+    - DR-06
+  malik-saad-shaheed:
+    aliases:
+    - Malik Saad
+    - Malik Saad Shaheed Flyover
+    name: Malik Saad Shaheed
+    served_by:
+    - DR-03B
+    - ER-01
+    - ER-09
+    - SR-02
+    - SR-08
+    urdu:
+    - ملک سعد شہید
+  mall-of-hayatabad:
+    aliases:
+    - Hayatabad Mall
+    - Mall Hayatabad
+    - Hayatabad
+    name: Mall of Hayatabad
+    served_by:
+    - DR-05
+    - DR-06
+    - ER-01
+    - ER-10
+    - SR-02
+    - SR-08
+    urdu:
+    - مال آف حیات آباد
+    - حیات آباد
+  mall-road:
+    aliases:
+    - The Mall
+    - Mall Road Peshawar
+    name: Mall Road
+    served_by:
+    - SR-02
+    - SR-08
+    urdu:
+    - مال روڈ
+  masjid-abu-bakr:
+    aliases:
+    - Abu Bakr Mosque
+    name: Masjid Abu Bakr
+    served_by:
+    - DR-14
+    urdu:
+    - مسجد ابوبکر
+  masjid-abu-huraira:
+    aliases:
+    - Abu Huraira Mosque
+    name: Masjid Abu Huraira
+    served_by:
+    - DR-14
+    urdu:
+    - مسجد ابو ہریرہ
+  masjid-e-hamza:
+    aliases:
+    - Masjid Hamza
+    name: Masjid e Hamza
+    served_by:
+    - DR-14
+    urdu:
+    - مسجد حمزہ
+  masjid-khalid-bin-waleed:
+    aliases:
+    - Khalid bin Waleed Mosque
+    name: Masjid Khalid bin Waleed
+    served_by:
+    - DR-14
+    urdu:
+    - مسجد خالد بن ولید
+  masjid-umar-farooq:
+    aliases:
+    - Umar Farooq Mosque
+    name: Masjid Umar Farooq
+    served_by:
+    - DR-14
+    urdu:
+    - مسجد عمر فاروق
+  mian-khan-garhi:
+    aliases:
+    - Mian Khan Gari
+    name: Mian Khan Garhi
+    served_by:
+    - DR-14
+    - DR-14A
+    urdu:
+    - میاں خان گڑھی
+  mmc-hospital:
+    aliases:
+    - MMC
+    - Mercy Medical Complex
+    name: MMC Hospital
+    served_by:
+    - DR-04B
+  motorway-bridge:
+    aliases:
+    - Motorway Pul
+    - M1 Bridge
+    name: Motorway Bridge
+    served_by:
+    - DR-04B
+    urdu:
+    - موٹروے پل
+  muslim-abad:
+    aliases: []
+    name: Muslim Abad
+    served_by:
+    - DR-03B
+  nasapa:
+    aliases: []
+    name: Nasapa
+    served_by:
+    - DR-03B
+  nasapa-bala:
+    aliases: []
+    name: Nasapa Bala
+    served_by:
+    - DR-03B
+  naseer-teaching-hospital:
+    aliases:
+    - Naseer Hospital
+    - Naseerullah Babar Hospital
+    name: Naseer Teaching Hospital
+    served_by:
+    - DR-14
+    - DR-14A
+  nawab-market:
+    aliases: []
+    name: Nawab Market
+    served_by:
+    - DR-05
+    - ER-09
+  nishat-mill:
+    aliases: []
+    name: Nishat Mill
+    served_by:
+    - DR-03B
+  old-haji-camp:
+    aliases:
+    - Purana Haji Camp
+    name: Old Haji Camp
+    served_by:
+    - SR-02
+    urdu:
+    - پرانا حاجی کیمپ
+  pabbi-bazar:
+    aliases:
+    - Pabbi Bazaar
+    name: Pabbi Bazar
+    served_by:
+    - DR-13
+    urdu:
+    - پبی بازار
+  pabbi-railway-station:
+    aliases:
+    - Pabbi Station
+    name: Pabbi Railway Station
+    served_by:
+    - DR-13
+    urdu:
+    - پبی ریلوے اسٹیشن
+  pabbi-terminal:
+    aliases:
+    - Pabbi
+    - Pabbi Adda
+    name: Pabbi Terminal
+    served_by:
+    - DR-13
+    urdu:
+    - پبی ٹرمینل
+    - پبی
+  pahari-pura:
+    aliases:
+    - Pahari Pura Chowk
+    - Paharipura
+    name: Pahari Pura
+    served_by:
+    - DR-04B
+    urdu:
+    - پہاڑی پورہ
+  patang-chowk:
+    aliases:
+    - Patang
+    name: Patang Chowk
+    served_by:
+    - DR-04B
+    urdu:
+    - پتنگ چوک
+  pda:
+    aliases: []
+    name: PDA
+    served_by:
+    - SR-02
+  pda-office:
+    aliases:
+    - PDA
+    name: PDA Office
+    served_by:
+    - DR-14
+  phase-6-terminal:
+    aliases:
+    - Phase-6 Terminal
+    - Phase 6
+    - Hayatabad Phase 6
+    name: Phase 6 Terminal
+    served_by:
+    - DR-05
+    - ER-09
+    urdu:
+    - فیز 6 ٹرمینل
+  phase-7-chowk:
+    aliases:
+    - Phase-7 Chowk
+    name: Phase 7 Chowk
+    served_by:
+    - DR-07
+  phase-7-terminal:
+    aliases:
+    - Phase-7 Terminal
+    - Phase 7
+    - Hayatabad Phase 7
+    name: Phase 7 Terminal
+    served_by:
+    - DR-06
+    - DR-07
+    urdu:
+    - فیز 7 ٹرمینل
+  pir-zakori-bridge:
+    aliases:
+    - Pir Zakori Pul
+    - Pir Zakori
+    name: Pir Zakori Bridge
+    served_by:
+    - DR-04B
+    urdu:
+    - پیر زکوڑی پل
+  pishtakhara-chowk:
+    aliases:
+    - Pishtakhara
+    - Pishtakhra Chowk
+    name: Pishtakhara Chowk
+    served_by:
+    - DR-04A
+    urdu:
+    - پشتہ خرہ چوک
+    - پشتہ خرہ
+  pishtakhara-thana:
+    aliases:
+    - Pishtakhara Police Station
+    name: Pishtakhara Thana
+    served_by:
+    - DR-04A
+    urdu:
+    - پشتہ خرہ تھانہ
+  police-colony:
+    aliases: []
+    name: Police Colony
+    served_by:
+    - DR-14
+    - DR-14A
+    urdu:
+    - پولیس کالونی
+  professor-model-town:
+    aliases:
+    - Professor Colony
+    - Professor Town
+    name: Professor Model Town
+    served_by:
+    - DR-14A
+    urdu:
+    - پروفیسر ماڈل ٹاؤن
+  pso-stop:
+    aliases:
+    - PSO Pump
+    name: PSO Stop
+    served_by:
+    - DR-14
+    - DR-14A
+  ptcl-office:
+    aliases:
+    - PTCL
+    name: PTCL Office
+    served_by:
+    - DR-14
+    - DR-14A
+    urdu:
+    - پی ٹی سی ایل آفس
+  railway-station:
+    aliases:
+    - Peshawar Cantt Station
+    - Peshawar Railway Station
+    - Cantt Station
+    name: Railway Station
+    served_by:
+    - SR-02
+    - SR-08
+    urdu:
+    - ریلوے اسٹیشن
+  rashakai:
+    aliases:
+    - Rashakai Stop
+    name: Rashakai
+    served_by:
+    - DR-04A
+    urdu:
+    - رشکئی
+  regi-model-town:
+    aliases:
+    - Regi
+    - Regi Model Town Peshawar
+    name: Regi Model Town
+    served_by:
+    - DR-14
+    - DR-14A
+    urdu:
+    - ریگی ماڈل ٹاؤن
+    - ریگی
+  rehman-baba-market:
+    aliases: []
+    name: Rehman Baba Market
+    served_by:
+    - DR-06
+  ring-road-bridge:
+    aliases:
+    - Ring Road
+    - Ring Road Pul
+    name: Ring road Bridge
+    served_by:
+    - DR-05
+    - ER-09
+    urdu:
+    - رنگ روڈ
+  saddar-bazar:
+    aliases:
+    - Sadar
+    - Sadar Bazar
+    - Saddar
+    - Saddar Bazaar
+    - Sadar Bazaar
+    - Sadr Bazar
+    name: Saddar Bazar
+    served_by:
+    - ER-01
+    - ER-09
+    - ER-10
+    - SR-02
+    - SR-08
+    urdu:
+    - صدر بازار
+    - صدر
+  sardar-garhi:
+    aliases:
+    - Sardar Garhi Stop
+    - Sardargarhi
+    name: Sardar Garhi
+    served_by:
+    - ER-01
+    - SR-02
+    urdu:
+    - سردار گڑھی
+  sewan:
+    aliases: []
+    name: Sewan
+    served_by:
+    - DR-03B
+  shah-alam-pul:
+    aliases:
+    - Shah Alam Pull
+    - Shah Alam Bridge
+    - Shahalam Pul
+    name: Shah Alam Pul
+    served_by:
+    - DR-03B
+    urdu:
+    - شاہ عالم پل
+  shahad-market:
+    aliases:
+    - Shahad Bazar
+    name: Shahad Market
+    served_by:
+    - DR-13
+    urdu:
+    - شہد مارکیٹ
+  shaheed-saqib-ghani-school:
+    aliases: []
+    name: Shaheed Saqib Ghani School
+    served_by:
+    - DR-03A
+  shaheed-tehseen-chowk:
+    aliases: []
+    name: Shaheed Tehseen Chowk
+    served_by:
+    - DR-03B
+  shahi-bagh:
+    aliases: []
+    name: Shahi Bagh
+    served_by:
+    - DR-03B
+  shalman-park:
+    aliases: []
+    name: Shalman Park
+    served_by:
+    - DR-05
+  shamali-market:
+    aliases: []
+    name: Shamali Market
+    served_by:
+    - DR-07
+  shero-jhangi:
+    aliases: []
+    name: Shero Jhangi
+    served_by:
+    - DR-03B
+  shoba-bazar:
+    aliases:
+    - Shuba Bazar
+    - Shoba Bazaar
+    name: Shoba Bazar
+    served_by:
+    - SR-02
+    - SR-08
+    urdu:
+    - شعبہ بازار
+  stadium-chowk:
+    aliases:
+    - Arbab Niaz Stadium
+    - Stadium
+    name: Stadium Chowk
+    served_by:
+    - DR-04A
+    urdu:
+    - اسٹیڈیم چوک
+  sugar-mill:
+    aliases: []
+    name: Sugar Mill
+    served_by:
+    - DR-03B
+  swatu-pattak:
+    aliases:
+    - Swati Pattak
+    - Swatu Patak
+    name: Swatu Pattak
+    served_by:
+    - DR-04A
+  tarnab-farm:
+    aliases:
+    - Tarnab
+    - Tarnab Farms
+    name: Tarnab Farm
+    served_by:
+    - DR-13
+    urdu:
+    - ترناب فارم
+  taru-jaba:
+    aliases:
+    - Taru Jabba
+    name: Taru Jaba
+    served_by:
+    - DR-13
+    urdu:
+    - ترو جبہ
+  tatara-park:
+    aliases: []
+    name: Tatara Park
+    served_by:
+    - SR-02
+  tauda:
+    aliases: []
+    name: Tauda
+    served_by:
+    - DR-03B
+  technical-college:
+    aliases: []
+    name: Technical College
+    served_by:
+    - DR-03A
+    - ER-10
+  tehkal-bala:
+    aliases:
+    - Takhal Bala
+    name: Tehkal Bala
+    served_by:
+    - SR-02
+    - SR-08
+    urdu:
+    - تہکال بالا
+  tehkal-payyan:
+    aliases:
+    - Tehkal Payan
+    - Takhal Payan
+    name: Tehkal Payyan
+    served_by:
+    - ER-10
+    - SR-02
+    - SR-08
+    urdu:
+    - تہکال پایان
+  tevta:
+    aliases: []
+    name: TEVTA
+    served_by:
+    - DR-07
+  toda:
+    aliases: []
+    name: Toda
+    served_by:
+    - ER-12
+    urdu:
+    - توڑہ
+  university-of-peshawar:
+    aliases:
+    - UoP
+    - Peshawar University
+    - University Of Peshawar
+    - Uni of Peshawar
+    name: University of Peshawar
+    served_by:
+    - ER-01
+    - ER-09
+    - ER-10
+    - SR-02
+    - SR-08
+    urdu:
+    - یونیورسٹی آف پشاور
+    - پشاور یونیورسٹی
+  university-town:
+    aliases:
+    - Uni Town
+    - University Town Peshawar
+    name: University Town
+    served_by:
+    - SR-02
+    - SR-08
+    urdu:
+    - یونیورسٹی ٹاؤن
+  wahid-garhi:
+    aliases:
+    - Wahid Gari
+    name: Wahid Garhi
+    served_by:
+    - ER-12
+    urdu:
+    - واحد گڑھی
+  wahid-ghari:
+    aliases: []
+    name: Wahid Ghari
+    served_by:
+    - DR-03B
+  wapda-town:
+    aliases:
+    - WAPDA Town Peshawar
+    name: Wapda Town
+    served_by:
+    - DR-13
+    urdu:
+    - واپڈا ٹاؤن
+  wazir-colony:
+    aliases: []
+    name: Wazir Colony
+    served_by:
+    - DR-04B
+    urdu:
+    - وزیر کالونی
+  yousafzai-market:
+    aliases: []
+    name: Yousafzai Market
+    served_by:
+    - DR-05
+    - ER-09
+  zarghuni-masjid:
+    aliases: []
+    name: Zarghuni Masjid
+    served_by:
+    - DR-06
+    - DR-07
+    - ER-09
+  zone-3-ground:
+    aliases:
+    - Zone 3
+    - Zone Three Ground
+    name: Zone 3 Ground
+    served_by:
+    - DR-14

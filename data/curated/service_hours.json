@@ -1,0 +1,13 @@
+{
+  "opens": "06:00",
+  "closes": "22:00",
+  "days": "all week",
+  "note": "TransPeshawar states the Zu service runs about 16 hours a day, 6 AM to 10 PM, seven days a week. Individual routes start and finish later than that; the per-route first and last bus times in routes.json are what a rider should trust.",
+  "provenance": {
+    "source_url": "https://transpeshawar.pk/passenger-services/operation-hours/",
+    "source_type": "html_prose",
+    "retrieved_at": "2026-09-10T21:10:34+00:00",
+    "verified_by": null,
+    "note": null
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "kind": "map_only_route_stops",
+  "source_image": "https://transpeshawar.pk/wp-content/uploads/2025/06/MAP_001.jpg",
+  "confidence": "mixed",
+  "verified_by": "claude-opus-5 (read tiled crops of the network map directly)",
+  "verified_at": "2026-09-10",
+  "notes": [
+    "Stop sequences for the nine routes that have no timetable on the website. Read off the schematic network map, where stop codes sit in numbered boxes and names run diagonally alongside them.",
+    "Confidence is per route. 'high' means the code-to-name pairing was unambiguous in the crop. 'medium' means the sequence order is certain but one or two code-to-name pairings could be off by one. 'needs_human' means the branch is too dense to read reliably and no stop list is claimed.",
+    "Only routes marked 'high' are loaded into the journey-planning graph. The rest are still indexed as text so Rehbar can say the route exists and name its endpoints, without inventing a stop sequence.",
+    "Codes prefixed I are the map's Direct Route Stop numbers; corridor BRT stations are numbered 1-30 separately."
+  ],
+  "payload": {
+    "routes": [
+      {
+        "route_id": "DR-04A",
+        "confidence": "medium",
+        "coverage": "complete",
+        "stops": [
+          {"code": null,   "name": "Mall Road"},
+          {"code": "I17",  "name": "Stadium Chowk"},
+          {"code": "I18",  "name": "Khyber Super Market"},
+          {"code": "I20",  "name": "Swatu Pattak"},
+          {"code": "I21",  "name": "Bara Gate"},
+          {"code": "I22",  "name": "Rashakai"},
+          {"code": "I23",  "name": "Custom Chowk"},
+          {"code": "I24",  "name": "Pishtakhara Thana"},
+          {"code": null,   "name": "Pishtakhara Chowk"}
+        ],
+        "caveat": "Code I19 is not printed on the map; the name-to-code offset after I18 is therefore uncertain by one, though the order of names is not."
+      },
+      {
+        "route_id": "DR-04B",
+        "confidence": "high",
+        "coverage": "complete",
+        "stops": [
+          {"code": null,  "name": "Chamkani"},
+          {"code": "I01", "name": "Pir Zakori Bridge"},
+          {"code": "I02", "name": "Motorway Bridge"},
+          {"code": "I03", "name": "Kambo Adda"},
+          {"code": "I04", "name": "Pahari Pura"},
+          {"code": "I05", "name": "Kabotar Chowk"},
+          {"code": "I06", "name": "MMC Hospital"},
+          {"code": "I07", "name": "Wazir Colony"},
+          {"code": "I08", "name": "Abasyn University"},
+          {"code": "I09", "name": "Patang Chowk"},
+          {"code": "I10", "name": "Shaheed Tehseen Chowk"},
+          {"code": "I11", "name": "Charsadda Adda"},
+          {"code": "I12", "name": "Eid Gah"},
+          {"code": "I13", "name": "Shahi Bagh"},
+          {"code": null,  "name": "Malik Saad Shaheed"}
+        ]
+      },
+      {
+        "route_id": "ER-12",
+        "confidence": "medium",
+        "coverage": "northern_branch_only",
+        "stops": [
+          {"code": "I34",  "name": "Budhni Pul"},
+          {"code": "I35",  "name": "Nishat Mill"},
+          {"code": "I36",  "name": "Landey Sarrak"},
+          {"code": "I37",  "name": "Shero Jhangi"},
+          {"code": "I37A", "name": "Habib Abad"},
+          {"code": "I38",  "name": "Ibrahim Abad"},
+          {"code": "I39",  "name": "Bakhshu Pul"},
+          {"code": "I39A", "name": "Muslim Abad"},
+          {"code": "I40",  "name": "Nasapa"},
+          {"code": "I40A", "name": "Nasapa Bala"},
+          {"code": "I41",  "name": "Sugar Mill"},
+          {"code": "I42",  "name": "Sewan"},
+          {"code": "I42A", "name": "Faqir Abad"},
+          {"code": "I43",  "name": "Khazana"},
+          {"code": "I43A", "name": "Toda"},
+          {"code": "I44",  "name": "Wahid Garhi"},
+          {"code": "I45",  "name": "Shah Alam Pul"}
+        ],
+        "caveat": "This is the branch ER-12 shares with DR-03B north of the corridor. Which corridor stations ER-12 calls at between Mall of Hayatabad and the branch is not legible on the map."
+      },
+      {
+        "route_id": "DR-13",
+        "confidence": "medium",
+        "coverage": "complete",
+        "stops": [
+          {"code": null,  "name": "Sardar Garhi"},
+          {"code": null,  "name": "Chamkani"},
+          {"code": null,  "name": "Chamkani Morr"},
+          {"code": "I88", "name": "Shahad Market"},
+          {"code": "I89", "name": "Jhagra"},
+          {"code": "I90", "name": "Kala Mandi"},
+          {"code": "I91", "name": "Tarnab Farm"},
+          {"code": "I92", "name": "Taru Jaba"},
+          {"code": "I93", "name": "Wapda Town"},
+          {"code": "I94", "name": "Govt. Girls Degree College"},
+          {"code": "I95", "name": "Pabbi Railway Station"},
+          {"code": "I96", "name": "Kajor Stop"},
+          {"code": "I97", "name": "Pabbi Bazar"},
+          {"code": "I98", "name": "Pabbi Terminal"}
+        ],
+        "caveat": "The map prints twelve code boxes (I88-I99) against eleven diagonal names east of Chamkani Morr, so individual code-to-name pairings may be shifted by one. The order of the names is unambiguous."
+      },
+      {
+        "route_id": "DR-14",
+        "confidence": "high",
+        "coverage": "north_branch_plus_terminal_loop",
+        "stops": [
+          {"code": "I200", "name": "PTCL Office"},
+          {"code": "I202", "name": "Canal Bank Colony"},
+          {"code": "I203", "name": "Naseer Teaching Hospital"},
+          {"code": "I204", "name": "PSO Stop"},
+          {"code": "I205", "name": "Police Colony"},
+          {"code": "I206", "name": "Askari 6 Phase 2"},
+          {"code": "I207", "name": "Askari 6 Phase 1"},
+          {"code": "I208", "name": "Mian Khan Garhi"},
+          {"code": "I209", "name": "Badezai"},
+          {"code": "I210", "name": "Regi Model Town"},
+          {"code": "I211", "name": "Masjid Abu Huraira"},
+          {"code": "I212", "name": "Zone 3 Ground"},
+          {"code": "I213", "name": "Govt. Girls Primary School"},
+          {"code": "I214", "name": "Bangash Park"},
+          {"code": "I215", "name": "Masjid e Hamza"},
+          {"code": "I216", "name": "PDA Office"},
+          {"code": "I217", "name": "Masjid Umar Farooq"},
+          {"code": "I218", "name": "Masjid Khalid bin Waleed"},
+          {"code": "I219", "name": "Masjid Abu Bakr"}
+        ],
+        "caveat": "Stops I211-I219 form a one-way loop through Regi Model Town Zone 3, not a there-and-back sequence. No code I201 is printed. The leg between Board Bazar and PTCL Office runs along the corridor and its stations are not distinguishable on the map."
+      },
+      {
+        "route_id": "DR-14A",
+        "confidence": "high",
+        "coverage": "north_branch_only",
+        "stops": [
+          {"code": "I200", "name": "PTCL Office"},
+          {"code": "I202", "name": "Canal Bank Colony"},
+          {"code": "I203", "name": "Naseer Teaching Hospital"},
+          {"code": "I204", "name": "PSO Stop"},
+          {"code": "I205", "name": "Police Colony"},
+          {"code": "I206", "name": "Askari 6 Phase 2"},
+          {"code": "I207", "name": "Askari 6 Phase 1"},
+          {"code": "I208", "name": "Mian Khan Garhi"},
+          {"code": "I209", "name": "Badezai"},
+          {"code": "I210", "name": "Regi Model Town"},
+          {"code": "I220", "name": "DHA"},
+          {"code": "I221", "name": "Professor Model Town"}
+        ]
+      },
+      {"route_id": "DR-11",  "confidence": "needs_human", "coverage": "none", "stops": [],
+       "caveat": "Runs through the dense Hayatabad stop cluster (I46-I87) where several routes overlap; the map crop does not separate them reliably."},
+      {"route_id": "ER-16",  "confidence": "needs_human", "coverage": "none", "stops": [],
+       "caveat": "Same Hayatabad cluster problem, plus a long shared corridor section."},
+      {"route_id": "XER-15", "confidence": "needs_human", "coverage": "none", "stops": [],
+       "caveat": "A super-express overlay on the main corridor; the map does not mark which of the 30 corridor stations it skips."}
+    ]
+  }
+}

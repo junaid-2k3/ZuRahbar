@@ -1,0 +1,39 @@
+{
+  "kind": "route_registry",
+  "source_image": "https://transpeshawar.pk/wp-content/uploads/2025/06/MAP_001.jpg",
+  "source_image_version": "v46, approved 2020-11-09, updated April 2025",
+  "previous_image": "https://transpeshawar.pk/wp-content/uploads/2024/10/English-Map-JGP.png (v45, updated October 2024)",
+  "confidence": "verified",
+  "verified_by": "claude-opus-5 (read the route legend on both map versions)",
+  "verified_at": "2026-09-10",
+  "notes": [
+    "The route legend is the only place on the site that lists the full route inventory and, crucially, each route's length in km -- which is what the distance-based fare table needs.",
+    "19 routes are listed, not the 13 claimed in the prose on /services/peshawar-zu-system/.",
+    "Only 10 of these have timetables on /passenger-services/operation-schedule/: ER-01, SR-02, DR-03A, DR-03B, DR-05, DR-06, DR-07, SR-08, ER-09, ER-10.",
+    "v45 -> v46 changes: DR-13 length corrected from 23 km to 14 km; DR-14 and DR-14A now start from Board Bazzar rather than Islamia College; DR-14A's other end changed from DHA to Professor Model Town. v46 values are used.",
+    "SR-08's length is printed as '15' with the km unit cut off in v46; v45 prints '15 km'."
+  ],
+  "payload": {
+    "routes": [
+      {"route_id": "ER-01",  "map_label": "BRT Xpress Route 01",       "service_type": "express",       "endpoints": ["Chamkani", "Karkhano Market"],            "length_km": 27, "has_timetable": true},
+      {"route_id": "SR-02",  "map_label": "BRT Stopping Route 02",     "service_type": "standard",      "endpoints": ["Chamkani", "Karkhano Market"],            "length_km": 27, "has_timetable": true},
+      {"route_id": "DR-03A", "map_label": "Direct Route 03A",          "service_type": "direct",        "endpoints": ["Dabgari Gardens", "Kohat Adda"],          "length_km": 5,  "has_timetable": true},
+      {"route_id": "DR-03B", "map_label": "Direct Route 03B",          "service_type": "direct",        "endpoints": ["Malik Saad Shaheed", "Shah Alam Pul"],    "length_km": 9,  "has_timetable": true},
+      {"route_id": "DR-04A", "map_label": "Direct Route 04A",          "service_type": "direct",        "endpoints": ["Mall Road", "Pishtakhara Chowk"],         "length_km": 5,  "has_timetable": false},
+      {"route_id": "DR-04B", "map_label": "Direct Route 04B",          "service_type": "direct",        "endpoints": ["Chamkani", "Malik Saad Shaheed"],         "length_km": 10, "has_timetable": false, "via": "Ring Road"},
+      {"route_id": "DR-05",  "map_label": "Direct Route 05",           "service_type": "direct",        "endpoints": ["Mall of Hayatabad", "Phase 6 Terminal"],  "length_km": 7,  "has_timetable": true},
+      {"route_id": "DR-06",  "map_label": "Direct Route 06",           "service_type": "direct",        "endpoints": ["Mall of Hayatabad", "Phase 7 Terminal"],  "length_km": 8,  "has_timetable": true},
+      {"route_id": "DR-07",  "map_label": "Direct Route 07",           "service_type": "direct",        "endpoints": ["Karkhano Market", "Phase 7 Terminal"],    "length_km": 7,  "has_timetable": true},
+      {"route_id": "SR-08",  "map_label": "BRT Stopping Route 08",     "service_type": "standard",      "endpoints": ["Gulbahar Chowk", "Mall of Hayatabad"],    "length_km": 15, "has_timetable": true},
+      {"route_id": "ER-09",  "map_label": "Express Route 09",          "service_type": "express",       "endpoints": ["Gulbahar Chowk", "Phase 6 Terminal"],     "length_km": 22, "has_timetable": true},
+      {"route_id": "ER-10",  "map_label": "Express Route 10",          "service_type": "express",       "endpoints": ["Hospital Chowk", "Kohat Adda"],           "length_km": 19, "has_timetable": true},
+      {"route_id": "DR-11",  "map_label": "Direct Route 11",           "service_type": "direct",        "endpoints": ["Phase 6 Terminal", "Mall of Hayatabad"],  "length_km": 9,  "has_timetable": false},
+      {"route_id": "ER-12",  "map_label": "Express Route 12",          "service_type": "express",       "endpoints": ["Mall of Hayatabad", "Shah Alam Pul"],     "length_km": 23, "has_timetable": false},
+      {"route_id": "DR-13",  "map_label": "Direct Route 13",           "service_type": "direct",        "endpoints": ["Sardar Garhi", "Pabbi"],                  "length_km": 14, "has_timetable": false},
+      {"route_id": "DR-14",  "map_label": "Direct Route 14",           "service_type": "direct",        "endpoints": ["Board Bazar", "Regi Model Town"],         "length_km": 20, "has_timetable": false},
+      {"route_id": "DR-14A", "map_label": "Direct Route 14A",          "service_type": "direct",        "endpoints": ["Board Bazar", "Professor Model Town"],    "length_km": 20, "has_timetable": false},
+      {"route_id": "XER-15", "map_label": "Super Express Route 15",    "service_type": "super_express", "endpoints": ["Chamkani", "Mall of Hayatabad"],          "length_km": 20, "has_timetable": false},
+      {"route_id": "ER-16",  "map_label": "Express Route 16",          "service_type": "express",       "endpoints": ["Gulbahar Chowk", "Nawab Market"],         "length_km": 25, "has_timetable": false}
+    ]
+  }
+}

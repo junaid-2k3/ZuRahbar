@@ -1,0 +1,95 @@
+# Which parts of transpeshawar.pk ZuRehbar cares about.
+#
+# Scope decision: rider-relevant only. Tenders, audited statements, AGM minutes,
+# procurement plans and staff/board pages are deliberately excluded -- they carry
+# no information a rider could act on, and indexing them dilutes retrieval.
+#
+# Patterns are matched against the URL path (leading and trailing slash included).
+# `*` matches within a single path segment run, i.e. it is fnmatch, not regex.
+
+site:
+  base_url: "https://transpeshawar.pk"
+  # The server does not send its TLS intermediate certificate, so verification
+  # fails with "unable to verify the first certificate". See zurehbar/http.py.
+  tls_verify: false
+  request_delay_seconds: 1.0
+
+include_paths:
+  # --- Core rider information -------------------------------------------------
+  - "/passenger-services/"
+  - "/passenger-services/*/"
+  - "/plan-your-journey/"
+  - "/how-to-use-our-services/"
+  - "/code-of-conduct/"
+  - "/brochure/"
+  - "/fares-recharge/"
+  - "/helpline/"
+  - "/frequently-asked-questions/"
+  # --- Customer services ------------------------------------------------------
+  - "/customer-services/"
+  - "/customer-services/*/"
+  - "/complaint-management/"
+  - "/feedback/"
+  # --- Services and fleet -----------------------------------------------------
+  - "/services/"
+  - "/services/peshawar-zu-system/"
+  - "/services/bicycle-sharing-program/"
+  - "/bicycle-sharing-program/"
+  - "/bicycles/"
+  - "/buses/"
+  # --- Station / facility pages ----------------------------------------------
+  - "/chamkani-center/"
+  - "/dabgari-gardens-center/"
+  - "/dabgari-gardens-center-2/"
+  - "/zu-business-centre/"
+  # --- Maps and news ----------------------------------------------------------
+  - "/resource-center/downloads/zu-system-maps/"
+  - "/resource-center/video-guides/"
+  - "/news-updates/"
+  - "/news-letters/"
+  - "/"
+
+exclude_paths:
+  - "/tender/*"
+  - "/tender/"
+  - "/acts/"
+  - "/audited-statements/"
+  - "/annual-general-meeting-agm/"
+  - "/job-openings/"
+  - "/about-transpeshawar/*"
+  - "/author/*"
+  - "/media-room/*"
+  - "*/feed/"
+  - "/wp-json/*"
+  - "/xmlrpc.php*"
+
+# Pages whose live HTML must be fetched in addition to the REST API payload.
+# Avada renders tab containers server-side; the schedule page's route tabs are
+# more reliable in the rendered page than in content.rendered.
+force_live_html:
+  - "/passenger-services/operation-schedule/"
+  - "/passenger-services/operation-hours/"
+  - "/customer-services/frequently-asked-questions/"
+
+# Assets pulled at full resolution for vision transcription. Avada emits sized
+# variants (-200x116, -1024x595, ...); these are the unsuffixed originals.
+priority_assets:
+  fare_table:
+    - "https://transpeshawar.pk/wp-content/uploads/2026/04/TP-New-Fares.jpeg"
+    - "https://transpeshawar.pk/wp-content/uploads/2025/06/fares-e1750230908678.jpg"
+  network_map:
+    - "https://transpeshawar.pk/wp-content/uploads/2024/10/English-Map-JGP.png"
+    - "https://transpeshawar.pk/wp-content/uploads/2024/10/Urdu-Network-PNG.png"
+    - "https://transpeshawar.pk/wp-content/uploads/2025/06/MAP_001.jpg"
+    - "https://transpeshawar.pk/wp-content/uploads/2023/10/Network-Map-V44-20231024-Approved-1-alam-scaled.jpg"
+  bicycle_map:
+    - "https://transpeshawar.pk/wp-content/uploads/2025/02/Bicycle_Sharing_System_Map_V3__Eng.pdf"
+    - "https://transpeshawar.pk/wp-content/uploads/2025/02/Bicycle_Sharing_System_Map_V3__Urdu.pdf"
+  schedule_image:
+    - "https://transpeshawar.pk/wp-content/uploads/2023/07/Operational-Plan-June.jpg"
+
+# Media MIME types worth downloading at all.
+asset_mime_allowlist:
+  - "image/jpeg"
+  - "image/png"
+  - "application/pdf"
