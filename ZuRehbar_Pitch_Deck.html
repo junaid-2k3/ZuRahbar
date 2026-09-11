@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZuRehbar (زو رہبر) — Pitch Deck</title>
+  
+  <!-- Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Mermaid.js for embedded architecture diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       RESET & BASE VIEWPORT STYLES (MANDATORY VIEWPORT FITTING)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Theme Color System - Cyber Transit Emerald/Coral Dark Mode */
+      --bg-dark: #07090e;
+      --bg-surface: #0f1420;
+      --bg-surface-elevated: #171f30;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(0, 240, 180, 0.3);
+      
+      --text-main: #f0f4fc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --accent-emerald: #00f0b4;
+      --accent-cyan: #00d8ff;
+      --accent-coral: #ff5757;
+      --accent-gold: #ffc837;
+      --accent-purple: #a855f7;
+
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --slide-transition-speed: 0.5s;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+
+    /* Ambient Background Transit Motion Effect */
+    .bg-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 180, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(0, 216, 255, 0.06) 0%, transparent 40%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       SLIDE DECK CONTAINER & SLIDE STYLES
+       ========================================================================== */
+    .deck-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.96) translateY(20px);
+      transition: opacity var(--slide-transition-speed) ease, 
+                  transform var(--slide-transition-speed) cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility var(--slide-transition-speed);
+      overflow: hidden;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateY(0);
+      z-index: 10;
+    }
+
+    /* Slide Content Layout Components */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: clamp(2rem, 5vh, 3.5rem);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .slide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-emerald);
+      background: rgba(0, 240, 180, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 240, 180, 0.2);
+    }
+
+    .slide-title-wrapper {
+      margin-top: clamp(0.5rem, 2vh, 1.2rem);
+    }
+
+    .slide-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.8vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    .slide-subtitle {
+      font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+      font-weight: 400;
+    }
+
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: clamp(0.75rem, 2.5vh, 1.8rem) 0;
+      gap: clamp(0.8rem, 2vh, 1.5rem);
+    }
+
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: clamp(1.5rem, 4vh, 2.5rem);
+      font-size: clamp(0.75rem, 1vw, 0.85rem);
+      color: var(--text-dim);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.5rem;
+    }
+
+    /* Grid & Cards System */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+      height: 100%;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.8rem, 1.5vw, 1.5rem);
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: clamp(1rem, 2vw, 1.8rem);
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .card-accent {
+      border-left: 4px solid var(--accent-emerald);
+    }
+    
+    .card-coral {
+      border-left: 4px solid var(--accent-coral);
+    }
+
+    .card-cyan {
+      border-left: 4px solid var(--accent-cyan);
+    }
+
+    .card-title {
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-text {
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Metric Callout Box */
+    .stat-box {
+      background: rgba(15, 20, 32, 0.8);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      color: var(--accent-emerald);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Code & Terminal Blocks */
+    .code-block {
+      background: #04060a;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-family: var(--font-mono);
+      font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+      color: var(--accent-cyan);
+      white-space: pre-wrap;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+
+    /* Highlight Badges */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-emerald { background: rgba(0, 240, 180, 0.15); color: var(--accent-emerald); }
+    .badge-coral { background: rgba(255, 87, 87, 0.15); color: var(--accent-coral); }
+    .badge-cyan { background: rgba(0, 216, 255, 0.15); color: var(--accent-cyan); }
+    .badge-gold { background: rgba(255, 200, 55, 0.15); color: var(--accent-gold); }
+
+    /* ==========================================================================
+       NAVIGATION & PRESENTER CONTROLS BAR
+       ========================================================================== */
+    .nav-bar {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 100;
+      background: rgba(15, 20, 32, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--accent-emerald);
+    }
+
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: 0 0.5rem;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--accent-emerald), var(--accent-cyan));
+      width: 0%;
+      z-index: 101;
+      transition: width 0.3s ease;
+    }
+
+    /* Speaker Notes Modal / Panel */
+    .speaker-notes-panel {
+      position: fixed;
+      bottom: 4.5rem;
+      right: 1.5rem;
+      width: clamp(300px, 30vw, 480px);
+      background: rgba(10, 14, 23, 0.95);
+      border: 1px solid var(--accent-emerald);
+      border-radius: 12px;
+      padding: 1.2rem;
+      z-index: 99;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      display: none;
+      backdrop-filter: blur(12px);
+    }
+
+    .speaker-notes-panel.active {
+      display: block;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .notes-header {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--accent-emerald);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .notes-content {
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <div class="deck-container" id="deck">
+
+    <!-- ==========================================================================
+         SLIDE 1: TITLE & VISION
+         ========================================================================== -->
+    <section class="slide active" data-notes="Good day everyone. Today we are excited to present ZuRehbar—an AI voice and text assistant designed to revolutionize how citizens and visitors navigate the Peshawar BRT network. We combine hard, deterministic transit graph calculations with state-of-the-art Qwen LLM capabilities to deliver fast, zero-hallucination transit guidance in English, Urdu, and Roman Urdu.">
+      <div class="slide-header">
+        <span class="slide-tag">Qwen AI Hackathon • 2026</span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Peshawar, Pakistan</span>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div>
+            <div style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; color: #fff; margin-bottom: 0.8rem;">
+              ZuRehbar <br><span style="color: var(--accent-emerald);">زو رہبر</span>
+            </div>
+            <div style="font-size: clamp(1.1rem, 1.8vw, 1.5rem); color: var(--accent-cyan); font-weight: 600; margin-bottom: 1.2rem;">
+              Intelligent Voice & Text Navigation for Zu Peshawar Commuters
+            </div>
+            <p style="font-size: clamp(0.9rem, 1.2vw, 1.1rem); color: var(--text-muted); line-height: 1.6; max-width: 90%;">
+              Empowering <strong style="color: #fff;">250,000+ daily riders</strong> with deterministic shortest-path transit routing, 9-band distance fare calculations, and natural multilingual AI in English, Urdu, and Pashto.
+            </p>
+          </div>
+
+          <div class="card card-accent" style="display: flex; flex-direction: column; gap: 1.2rem; justify-content: center;">
+            <div class="stat-box">
+              <div class="stat-number">250K+</div>
+              <div class="stat-label">Daily BRT Commuters Served</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+              <div class="stat-box" style="padding: 0.8rem;">
+                <div class="stat-number" style="font-size: 1.8rem;">19</div>
+                <div class="stat-label">Total Routes</div>
+              </div>
+              <div class="stat-box" style="padding: 0.8rem;">
+                <div class="stat-number" style="font-size: 1.8rem; color: var(--accent-cyan);">100%</div>
+                <div class="stat-label">Deterministic Math</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Press <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">→</kbd> or <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">Space</kbd> to advance • Press <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">N</kbd> for Speaker Notes</span>
+        <span>Muhammad Hamza & Junaid Ahmad</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 2: THE PROBLEM
+         ========================================================================== -->
+    <section class="slide" data-notes="Peshawar BRT is a world-class transit system, but navigating it is surprisingly tough. If you need to travel from University Town to Saddar Bazaar, how many buses do you take? Which platform do you stand on? How much will it cost? The official website can't tell you. The fare table is buried inside an image in Urdu script, and there is no journey planner available anywhere.">
+      <div class="slide-header">
+        <span class="slide-tag">02 • The Problem</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Commuter Pain Points</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Navigating Zu Peshawar is Hard for Daily Riders</h2>
+        <p class="slide-subtitle">High network complexity coupled with fragmented, non-computable public information.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card card-coral">
+            <div class="card-title">
+              <span class="badge badge-coral">01</span> No Trip Planner
+            </div>
+            <p class="card-text">
+              TransPeshawar provides static timetable tables but <strong>zero point-to-point journey planning</strong>. Riders must manually guess multi-bus transfers.
+            </p>
+          </div>
+
+          <div class="card card-coral">
+            <div class="card-title">
+              <span class="badge badge-coral">02</span> Fares Hidden in Urdu JPEGs
+            </div>
+            <p class="card-text">
+              Fare tables exist <strong>only inside an Urdu image file</strong> on the website. Route leg distances are completely unpublished.
+            </p>
+          </div>
+
+          <div class="card card-coral">
+            <div class="card-title">
+              <span class="badge badge-coral">03</span> Missing & Conflicting Data
+            </div>
+            <p class="card-text">
+              9 feeder routes have no published timetables; 3 routes have stop sequences unreadable on map images. Web pages contradict card prices (Rs. 300 vs Rs. 400).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Problem Identification</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 3: THE SOLUTION
+         ========================================================================== -->
+    <section class="slide" data-notes="ZuRehbar solves this completely. A commuter simply speaks or types their trip into their phone. In seconds, ZuRehbar gives them exact step-by-step instructions: take ER-01 from Station X to Station Y, transfer at Saddar, and pay Rs. 45. It works equally well for voice and text, in both English and national/local languages.">
+      <div class="slide-header">
+        <span class="slide-tag">03 • The Solution</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Product Overview</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">ZuRehbar: Your Conversational Transit Guide</h2>
+        <p class="slide-subtitle">Instant turn-by-turn guidance and fare estimation in any language.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-accent" style="display: flex; flex-direction: column; justify-content: center; gap: 1rem;">
+            <div class="card-title" style="color: var(--accent-emerald);">
+              <span>💬</span> Multilingual Voice & Text Input
+            </div>
+            <p class="card-text">
+              Ask naturally in <strong>English, Urdu, Roman Urdu, or Pashto</strong>: <br>
+              <em style="color: #fff;">"Chamkani se Hayatabad kaise jaon?"</em>
+            </p>
+
+            <div class="code-block">
+Q: How do I get from University Town to Saddar Bazaar?
+  take SR-01 from University Town to Saddar Bazaar 
+  (6 stops, ~12 min, platform 1)
+  about 18 min, Rs. 35 (distance band estimate)
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="card card-cyan">
+              <div class="card-title">🗺️ Interactive Schematic Map</div>
+              <p class="card-text">Inline metro-style diagram highlighting the exact path and stations for the computed journey card.</p>
+            </div>
+            <div class="card card-cyan">
+              <div class="card-title">📶 Offline-First Engine</div>
+              <p class="card-text">Bundled local SQLite database (Drift) allows journey planning even with zero mobile connectivity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Solution Vision</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 4: CORE INNOVATION - DETERMINISTIC SPLIT
+         ========================================================================== -->
+    <section class="slide" data-notes="The biggest risk in AI transit apps is hallucination. You cannot afford to send a rider to a bus stop that doesn't exist or overcharge them on fare. We solved this with a strict division of labor: Qwen handles language understanding and phrasing, while a custom Python graph engine computes exact routes and fares. Qwen never calculates a price; it only speaks the verified mathematical truth.">
+      <div class="slide-header">
+        <span class="slide-tag">04 • Architectural Core</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Design Philosophy</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Why Standard LLMs Fail — The Deterministic Split</h2>
+        <p class="slide-subtitle">Preventing LLM transit hallucinations through strict division of responsibility.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-coral">
+            <div class="card-title" style="color: var(--accent-coral);">❌ Pure RAG / Raw LLM Approach</div>
+            <p class="card-text" style="margin-bottom: 0.8rem;">
+              LLMs cannot compute graph shortest paths, wait times, or distance fare bands.
+            </p>
+            <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+              <li>Hallucinates non-existent bus transfers</li>
+              <li>Invents wrong fare prices</li>
+              <li>Ignores service operating hours</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent">
+            <div class="card-title" style="color: var(--accent-emerald);">✅ ZuRehbar Engine Architecture</div>
+            <blockquote style="font-size: 0.9rem; color: #fff; font-style: italic; border-left: 3px solid var(--accent-emerald); padding-left: 0.8rem; margin-bottom: 0.8rem;">
+              "The model decides WHICH tool to call and HOW to phrase the answer; the tools decide WHAT IS TRUE."
+            </blockquote>
+            <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+              <li><strong>NetworkX Graph:</strong> Shortest-path routing & platforms</li>
+              <li><strong>Distance Engine:</strong> 9-band exact fare math</li>
+              <li><strong>Qdrant Hybrid Search:</strong> BM25 + Qwen dense vectors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Deterministic AI Architecture</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 5: SYSTEM ARCHITECTURE
+         ========================================================================== -->
+    <section class="slide" data-notes="Here is our full architecture. On the left is our data ingestion pipeline that turns raw web scraping and AI computer vision into a clean, verified transit dataset. In the center, our graph engine and hybrid Qdrant vector store power three clean tools. When a user asks a question, Qwen dispatches the tool, gets grounded facts, and generates a conversational response.">
+      <div class="slide-header">
+        <span class="slide-tag">05 • Architecture</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">End-to-End System Pipeline</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">End-to-End System Architecture</h2>
+        <p class="slide-subtitle">From raw WP REST scraping & computer vision to Qwen Function Calling and Flutter UI.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="card" style="background: #04060a; padding: 1.2rem; display: flex; justify-content: center; align-items: center;">
+          <pre class="mermaid" style="width: 100%; height: 100%;">
+flowchart LR
+    subgraph Ingestion["1. Ingestion Pipeline"]
+        A[TransPeshawar Web API] --> B[Scraper & HTTP Cache]
+        C[Urdu Fare JPEGs] --> D[AI Vision Extraction]
+        B --> E[Dataset Builder]
+        D --> E
+    end
+
+    subgraph Core["2. Grounded Engine"]
+        E --> F[(Curated JSON)]
+        F --> G[NetworkX Graph Engine]
+        F --> H[Qdrant Hybrid Vector Index]
+    end
+
+    subgraph Agent["3. Agent Surface"]
+        I[User Query] --> J[Qwen NLU LLM]
+        J --> K{Tool Surface}
+        K -->|plan_journey| G
+        K -->|search_knowledge| H
+        G --> L[Grounded Facts Payload]
+        H --> L
+        L --> J
+        J --> M[Natural Response]
+    end
+          </pre>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>System Design & Data Flow</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 6: GRAPH ENGINE & FARE MATH
+         ========================================================================== -->
+    <section class="slide" data-notes="To make routing feel natural, we built a specialized route-stop graph rather than a simple station graph. Boarding an edge incorporates half of the route's bus headway plus a 90-second transfer penalty. This means our algorithm automatically prefers a single bus ride over an annoying transfer unless the transfer saves significant time.">
+      <div class="slide-header">
+        <span class="slide-tag">06 • Graph Engine</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Transit Routing Logic</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Solving Transit Math: Route-Stop Graph Modeling</h2>
+        <p class="slide-subtitle">Why standard station graphs fail and how route-stop nodes model wait friction.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-accent">
+            <div class="card-title">Route-Stop Graph Model</div>
+            <p class="card-text" style="margin-bottom: 0.8rem;">
+              Nodes modeled as <code style="color: var(--accent-emerald);">stop:R:D:S</code> (Route R, Direction D, Station S).
+            </p>
+            <div class="code-block" style="font-size: 0.75rem;">
+Boarding Weight = (Headway / 2) + 90s Transfer Penalty
+Riding Weight   = Leg Travel Time (sec)
+Alighting Weight= 0
+            </div>
+            <p class="card-text" style="margin-top: 0.8rem;">
+              Shortest path pathfinding inherently favors a single-bus ride ("one-seat preference") unless a transfer saves genuine travel time.
+            </p>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-title">Distance Interpolation & Fares</div>
+            <p class="card-text" style="margin-bottom: 0.8rem;">
+              Zu charges distance-based fares across 9 bands (Rs. 30 to Rs. 70).
+            </p>
+            <div class="code-block" style="font-size: 0.75rem;">
+Leg Distance (km) = Total Length * (Leg Time / Total Time)
+            </div>
+            <p class="card-text" style="margin-top: 0.8rem;">
+              Distance is interpolated proportionally from travel time share. Results carry an explicit <code style="color: var(--accent-cyan);">is_estimate: true</code> flag.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Graph Algorithms & Economics</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 7: DATA PIPELINE & VISION EXTRACTION
+         ========================================================================== -->
+    <section class="slide" data-notes="Extracting data from the source required deep engineering. TransPeshawar published its entire fare structure inside an Urdu JPEG image. We built a vision tiling pipeline to transcribe this data into JSON, backed by a human audit verification system. Every single fare in our app traces back to a verified provenance file.">
+      <div class="slide-header">
+        <span class="slide-tag">07 • Data Engineering</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Robust Data Ingestion</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Robust Ingestion from Imperfect Web Sources</h2>
+        <p class="slide-subtitle">Overcoming broken SSL, Urdu image data, and official dataset contradictions.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title" style="color: var(--accent-emerald);">Custom HTTP Client</div>
+            <p class="card-text">
+              Handles TransPeshawar's broken TLS certificate chain safely in <code style="color: var(--accent-emerald);">http.py</code> with 1 req/s rate limiting and disk caching.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title" style="color: var(--accent-cyan);">AI Vision Tiling Pipeline</div>
+            <p class="card-text">
+              Tiles high-resolution Urdu fare matrices into spatial grids, extracting data into <code style="color: var(--accent-cyan);">data/review/*.json</code> with provenance stamps.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title" style="color: var(--accent-gold);">Honest Anomaly Report</div>
+            <p class="card-text">
+              Contradictions (e.g. card prices, route timeline vs timetable mismatches) are logged in <code style="color: var(--accent-gold);">dataset_report.json</code> rather than hidden.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Data Pipeline Architecture</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 8: HYBRID SEARCH & MULTILINGUAL AI
+         ========================================================================== -->
+    <section class="slide" data-notes="When riders ask about card costs, bicycle policies, or station operating hours, we rely on Qdrant hybrid search. We pair dense Qwen embeddings with sparse BM25 vectors. BM25 anchors specific station names exactly, while dense vectors handle cross-lingual intent across English, Urdu, and Pashto.">
+      <div class="slide-header">
+        <span class="slide-tag">08 • Vector Index</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Knowledge Retrieval</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Precision Knowledge Retrieval for Non-Trip Queries</h2>
+        <p class="slide-subtitle">Qdrant dense + BM25 sparse hybrid vector search over transit rules and station facts.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-accent">
+            <div class="card-title">Dense Embedding Model</div>
+            <p class="card-text">
+              Uses <strong style="color: #fff;">Qwen/Qwen3-Embedding-0.6B</strong> (1024-dim). Captures multilingual intent across English, Urdu, and Pashto.
+            </p>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-title">BM25 Sparse Vector Anchoring</div>
+            <p class="card-text">
+              Dense models blur rare proper nouns like <em>"Hashtnagri"</em>. BM25 sparse vectors anchor station names with 100% precision.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="background: rgba(0, 240, 180, 0.05); border-color: rgba(0, 240, 180, 0.3);">
+          <div class="card-title" style="color: var(--accent-emerald); font-size: 1rem;">Server-Side RRF (Reciprocal Rank Fusion)</div>
+          <p class="card-text" style="font-size: 0.9rem;">
+            Qdrant merges dense semantic search hits with BM25 sparse keyword rankings, returning grounded policy snippets for Qwen to phrase.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Hybrid Information Retrieval</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 9: USER EXPERIENCE & MOBILE APP
+         ========================================================================== -->
+    <section class="slide" data-notes="Our mobile app is built in Flutter for smooth cross-platform performance. It features a voice interface with live waveform feedback and barge-in support. Crucially, the entire transit dataset and routing engine can sync into a local Drift SQLite database, allowing commuters to plan trips even inside underground stations with no mobile data.">
+      <div class="slide-header">
+        <span class="slide-tag">09 • Mobile App</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">User Experience</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Flutter On-Device Mobile Experience</h2>
+        <p class="slide-subtitle">Designed for fast, hands-free commuter interactions on patchy networks.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card card-accent">
+            <div class="card-title">🎙️ Voice Pipeline</div>
+            <p class="card-text">
+              Tap-to-talk mic input with animated audio waveform feedback and barge-in voice response support.
+            </p>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-title">🗺️ Custom Map Canvas</div>
+            <p class="card-text">
+              Schematic metro map rendered natively via Flutter <code style="color: var(--accent-cyan);">CustomPainter</code>—highlighting path inline.
+            </p>
+          </div>
+
+          <div class="card card-gold">
+            <div class="card-title">💾 Drift SQLite Sync</div>
+            <p class="card-text">
+              Local database sync enables route planning and fare calculations even when completely offline.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Mobile App Architecture</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 10: PITCH TO TRANSPESHAWAR (B2G)
+         ========================================================================== -->
+    <section class="slide" data-notes="For TransPeshawar, ZuRehbar is a plug-and-play solution. It requires no changes to their existing IT infrastructure or buses. TransPeshawar can white-label this directly into their official app, launch it as a WhatsApp bot, or place it on station kiosks—instantly providing world-class AI guidance to hundreds of thousands of daily riders.">
+      <div class="slide-header">
+        <span class="slide-tag">10 • Business Pitch</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">B2G Opportunity</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Ready-to-Deploy Companion App for TransPeshawar</h2>
+        <p class="slide-subtitle">High public impact with zero hardware or IT infrastructure overhead.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-accent">
+            <div class="card-title" style="color: var(--accent-emerald);">Value for TransPeshawar</div>
+            <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.7;">
+              <li><strong>Zero Hardware Cost:</strong> Integrates with static web endpoints</li>
+              <li><strong>Reduces Ticket Line Congestion:</strong> Automated fare & route clarity</li>
+              <li><strong>Inclusive Accessibility:</strong> Bridges language/literacy barriers</li>
+            </ul>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-title" style="color: var(--accent-cyan);">Deployment Formats</div>
+            <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.7;">
+              <li><strong>Official White-Label App:</strong> Embedded in Zu Peshawar app</li>
+              <li><strong>WhatsApp / Telegram Bot:</strong> Instant messaging channel</li>
+              <li><strong>Station Touch Kiosks:</strong> Interactive physical terminals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>B2G Partnership Model</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 11: ROADMAP & EXPANSION
+         ========================================================================== -->
+    <section class="slide" data-notes="We have already built and validated the core engine, data pipeline, and vector search with comprehensive testing. Moving forward, we plan to add GPS spatial matching, expand to other major Pakistani transit networks like Lahore and Islamabad Metro, and integrate GTFS-Realtime bus tracking when feeds become available.">
+      <div class="slide-header">
+        <span class="slide-tag">11 • Roadmap</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Future Vision</span>
+      </div>
+
+      <div class="slide-title-wrapper">
+        <h2 class="slide-title">Phased Development & Multi-City Expansion</h2>
+        <p class="slide-subtitle">From Qwen Hackathon MVP to national urban transit AI assistant.</p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-accent">
+            <div class="card-title" style="color: var(--accent-emerald);">Phase 1 & 2 (Completed / MVP)</div>
+            <p class="card-text">
+              Scraper pipeline, NetworkX route-stop graph engine, 9-band fare calculator, Qdrant hybrid index, 69 pytest suite, and Flutter client prototype.
+            </p>
+          </div>
+
+          <div class="card card-cyan">
+            <div class="card-title" style="color: var(--accent-cyan);">Phase 3 & 4 (Future Growth)</div>
+            <p class="card-text">
+              GPS stop spatial matching, GTFS-Realtime live bus tracking feeds, and expansion to Lahore Metrobus, Rawalpindi-Islamabad Metro, and Karachi Breeze BRT.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Product Roadmap</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SLIDE 12: TEAM & CALL TO ACTION
+         ========================================================================== -->
+    <section class="slide" data-notes="Thank you for your time. We invite you to test our live demo script and explore our codebase. Together, let me and my team make public transport accessible, friendly, and smart for everyone in Peshawar and beyond. We welcome your questions.">
+      <div class="slide-header">
+        <span class="slide-tag">12 • Conclusion</span>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Team & Contact</span>
+      </div>
+
+      <div class="slide-body" style="text-align: center; justify-content: center; align-items: center;">
+        <div style="font-family: var(--font-display); font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; color: #fff; margin-bottom: 0.8rem;">
+          Transforming Public Mobility with AI
+        </div>
+        <p style="font-size: clamp(1rem, 1.5vw, 1.3rem); color: var(--accent-emerald); margin-bottom: 2rem;">
+          ZuRehbar — Guidance for Every Commuter.
+        </p>
+
+        <div class="grid-3" style="max-width: 900px; margin: 0 auto; text-align: left; width: 100%;">
+          <div class="card">
+            <div style="font-weight: 700; color: #fff;">Muhammad Hamza</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">AI & Data Pipeline Architect</div>
+          </div>
+          <div class="card">
+            <div style="font-weight: 700; color: #fff;">Junaid Ahmad</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Backend & Systems Engineer</div>
+          </div>
+          <div class="card">
+            <div style="font-weight: 700; color: #fff;">Sajid Islam & Team</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Functional Requirements & UX</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-cyan);">
+          Test live demo script: <code style="background: rgba(0,216,255,0.1); padding: 0.3rem 0.8rem; border-radius: 6px;">python scripts/ask.py --demo</code>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>ZuRehbar Presentation Deck</span>
+        <span>Thank You! Q&A Session</span>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Speaker Notes Modal -->
+  <div class="speaker-notes-panel" id="speakerNotesPanel">
+    <div class="notes-header">
+      <span>Speaker Notes (Press 'N' to toggle)</span>
+      <span id="notesSlideNum">Slide 1/12</span>
+    </div>
+    <div class="notes-content" id="notesContent">
+      Slide notes will appear here.
+    </div>
+  </div>
+
+  <!-- Presenter Controls -->
+  <div class="nav-bar">
+    <button class="nav-btn" id="prevBtn" title="Previous Slide (Left Arrow)">←</button>
+    <span class="slide-counter" id="slideCounter">1 / 12</span>
+    <button class="nav-btn" id="nextBtn" title="Next Slide (Right Arrow or Space)">→</button>
+    <button class="nav-btn" id="notesBtn" title="Toggle Speaker Notes (N)">📝</button>
+    <button class="nav-btn" id="fsBtn" title="Toggle Fullscreen (F)">⛶</button>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       INTERACTIVE SLIDE DECK CONTROLLER
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const notesBtn = document.getElementById('notesBtn');
+      const fsBtn = document.getElementById('fsBtn');
+      const slideCounter = document.getElementById('slideCounter');
+      const progressBar = document.getElementById('progressBar');
+      const speakerNotesPanel = document.getElementById('speakerNotesPanel');
+      const notesContent = document.getElementById('notesContent');
+      const notesSlideNum = document.getElementById('notesSlideNum');
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      // Initialize Mermaid diagrams
+      if (window.mermaid) {
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'dark',
+          themeVariables: {
+            fontFamily: 'Plus Jakarta Sans',
+            primaryColor: '#00f0b4',
+            primaryTextColor: '#07090e',
+            lineColor: '#00d8ff',
+            fontSize: '13px'
+          }
+        });
+      }
+
+      function updateSlide(index) {
+        if (index < 0 || index >= totalSlides) return;
+        
+        slides[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+
+        // Update UI counters & progress
+        slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        const progressPct = ((currentSlide + 1) / totalSlides) * 100;
+        progressBar.style.width = `${progressPct}%`;
+
+        // Update Speaker Notes
+        const currentNotes = slides[currentSlide].getAttribute('data-notes') || 'No speaker notes for this slide.';
+        notesContent.textContent = currentNotes;
+        notesSlideNum.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
+      }
+
+      // Event Listeners for Nav Buttons
+      prevBtn.addEventListener('click', () => updateSlide(currentSlide - 1));
+      nextBtn.addEventListener('click', () => updateSlide(currentSlide + 1));
+
+      notesBtn.addEventListener('click', () => {
+        speakerNotesPanel.classList.toggle('active');
+      });
+
+      fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(err => console.log(err));
+        } else {
+          document.exitFullscreen();
+        }
+      });
+
+      // Keyboard Controls
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+          e.preventDefault();
+          updateSlide(currentSlide + 1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          updateSlide(currentSlide - 1);
+        } else if (e.key.toLowerCase() === 'n') {
+          speakerNotesPanel.classList.toggle('active');
+        } else if (e.key.toLowerCase() === 'f') {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(err => console.log(err));
+          } else {
+            document.exitFullscreen();
+          }
+        }
+      });
+
+      // Initialize slide 0
+      updateSlide(0);
+    });
+  </script>
+</body>
+</html>
