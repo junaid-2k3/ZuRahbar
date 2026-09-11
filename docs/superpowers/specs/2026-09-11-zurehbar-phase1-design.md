@@ -12,6 +12,12 @@
 
 This spec does not restate those requirements in full — it records the decisions needed to start building Phase 1 and the architecture that implements them.
 
+## Post-implementation deviation (2026-09-12)
+
+**Qwen is called directly from the app, not through `backend/`.** Cloud Functions v2 (what `backend/` uses for `extractQuery`/`phraseAnswer`) requires a Firebase Blaze billing account just to make any outbound call to a non-Google API — Spark blocks that entirely, regardless of function generation. A Blaze upgrade wasn't available. `app/lib/api/qwen_direct_client.dart` calls Qwen's chat-completions endpoint directly, using the same two system prompts as `backend/functions/src/extractQuery.ts`/`phraseAnswer.ts`, with the API key passed in at build time via `--dart-define=QWEN_API_KEY=...` (never hardcoded).
+
+This is a deliberate, reversible interim deviation from decision #2 above ("Qwen calls are backend-proxied only") and from `backend/`'s own security note. Consequence: the Qwen API key ships inside the built APK and is extractable by anyone with the file — acceptable only for a private, non-distributed demo, not a public release. `backend/` is untouched and dormant; swap `QwenDirectClient` back for `DioBackendClient` in `app/lib/main.dart` once a Blaze account (or an alternative host such as Cloudflare Workers) is available.
+
 ## Decisions made (this session)
 
 | # | Question | Decision |
