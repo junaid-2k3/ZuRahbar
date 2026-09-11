@@ -21,3 +21,4 @@ app/.dart_tool/
 app/ios/Flutter/flutter_export_environment.sh
 
 .worktrees/
+.superpowers/
