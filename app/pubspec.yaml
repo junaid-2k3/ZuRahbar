@@ -24,3 +24,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/data/routes.json
+    - assets/data/stations.json
+    - assets/data/fares.json
+    - assets/data/service_hours.json
