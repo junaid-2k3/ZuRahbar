@@ -27,7 +27,11 @@ export async function callQwen(systemPrompt: string, userMessage: string): Promi
   }
 
   const data = (await response.json()) as {
-    choices: { message: { content: string } }[];
+    choices?: { message?: { content?: unknown } }[];
   };
-  return data.choices[0].message.content;
+  const content = data?.choices?.[0]?.message?.content;
+  if (typeof content !== "string") {
+    throw new Error("Qwen returned no completion content");
+  }
+  return content;
 }
