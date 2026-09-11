@@ -16,6 +16,11 @@ Qwen phrases answers — it never computes a route or a price. That split is the
 
 ## Commands
 
+The package is **not** pip-installed, so `python -m zurehbar.*` resolves only from the repo root — run
+everything from `/home/junaid/zu Rahbar`. A bare `cd /tmp && python -m zurehbar.model.build` fails with
+`ModuleNotFoundError`, and a heredoc piped to `python -` inherits that too. The `scripts/*.py` files work
+from anywhere because each inserts the project root on `sys.path` itself.
+
 ```bash
 docker compose up -d                                  # Qdrant on :6333 (required for index/search)
 
@@ -121,3 +126,7 @@ at 512 because the model advertises 32k and pads every batch far past any docume
 lexical matching comes from a BM25 sparse vector fused server-side with RRF — station names are rare proper
 nouns that dense retrieval blurs, and BM25 anchors "Hashtnagri" exactly. Changing the model changes the
 vector size, which requires `--recreate`, not an update.
+
+`qdrant-client` 1.19 warns on every connection that it is talking to the 1.12.4 server pinned in
+`docker-compose.yml`. Loading and hybrid search both work; align the two before relying on newer query
+features.
