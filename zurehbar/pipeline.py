@@ -15,8 +15,9 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from pathlib import Path
 
-STAGES = ("scrape", "build", "docgen", "index")
+STAGES = ("scrape", "build", "docgen", "export-app", "index")
 
 
 def main() -> int:
@@ -55,6 +56,14 @@ def main() -> int:
             sys.argv = ["docgen"]
             if docgen.main() != 0:
                 return 1
+        elif stage == "export-app":
+            from zurehbar.paths import CURATED_DIR
+            from scripts.export_app_dataset import export_to_firestore_seed, export_to_flutter_assets
+
+            project_root = Path(__file__).resolve().parent.parent
+            assets_written = export_to_flutter_assets(CURATED_DIR, project_root / "app" / "assets" / "data")
+            seed_path = export_to_firestore_seed(CURATED_DIR, project_root / "data" / "export" / "firestore_seed.json")
+            print("exported", ", ".join(str(p) for p in assets_written), "and", str(seed_path))
         elif stage == "index":
             from zurehbar.index import qdrant_load
 
