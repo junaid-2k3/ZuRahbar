@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from scripts.export_app_dataset import export_to_flutter_assets
 
 CURATED_FILES = ["routes.json", "stations.json", "fares.json", "service_hours.json"]
@@ -31,6 +33,26 @@ def test_export_to_flutter_assets_creates_assets_dir(tmp_path):
     export_to_flutter_assets(curated_dir, assets_dir)
 
     assert assets_dir.is_dir()
+
+
+def test_export_to_flutter_assets_raises_before_copying_when_a_file_is_missing(tmp_path):
+    curated_dir = tmp_path / "curated"
+    curated_dir.mkdir()
+    # Write all but one curated file, so the loop would otherwise copy three
+    # files before failing on the missing fourth.
+    present = CURATED_FILES[:-1]
+    missing_name = CURATED_FILES[-1]
+    for name in present:
+        (curated_dir / name).write_text(json.dumps({"marker": name}), encoding="utf-8")
+
+    assets_dir = tmp_path / "assets" / "data"
+
+    with pytest.raises(FileNotFoundError, match=missing_name):
+        export_to_flutter_assets(curated_dir, assets_dir)
+
+    # None of the other files should have been copied either: the check runs
+    # up front, before any copy happens.
+    assert not assets_dir.exists()
 
 
 def test_build_firestore_seed_keys_routes_and_stations_by_id(tmp_path):

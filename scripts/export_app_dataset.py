@@ -18,8 +18,18 @@ from zurehbar.paths import CURATED_DIR  # noqa: E402
 
 CURATED_FILENAMES = ["routes.json", "stations.json", "fares.json", "service_hours.json"]
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+ASSETS_DIR = PROJECT_ROOT / "app" / "assets" / "data"
+FIRESTORE_SEED_PATH = PROJECT_ROOT / "data" / "export" / "firestore_seed.json"
+
 
 def export_to_flutter_assets(curated_dir: Path, assets_dir: Path) -> list[Path]:
+    missing = [name for name in CURATED_FILENAMES if not (curated_dir / name).is_file()]
+    if missing:
+        raise FileNotFoundError(
+            f"missing curated file(s) in {curated_dir}: {', '.join(missing)}"
+        )
+
     assets_dir.mkdir(parents=True, exist_ok=True)
     written = []
     for name in CURATED_FILENAMES:
@@ -50,7 +60,10 @@ def export_to_firestore_seed(curated_dir: Path, output_path: Path) -> Path:
     return output_path
 
 
+def export_all() -> None:
+    export_to_flutter_assets(CURATED_DIR, ASSETS_DIR)
+    export_to_firestore_seed(CURATED_DIR, FIRESTORE_SEED_PATH)
+
+
 if __name__ == "__main__":
-    project_root = Path(__file__).resolve().parent.parent
-    export_to_flutter_assets(CURATED_DIR, project_root / "app" / "assets" / "data")
-    export_to_firestore_seed(CURATED_DIR, project_root / "data" / "export" / "firestore_seed.json")
+    export_all()

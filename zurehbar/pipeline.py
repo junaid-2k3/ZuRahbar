@@ -57,13 +57,14 @@ def main() -> int:
             if docgen.main() != 0:
                 return 1
         elif stage == "export-app":
-            from zurehbar.paths import CURATED_DIR
-            from scripts.export_app_dataset import export_to_firestore_seed, export_to_flutter_assets
+            # scripts/ is not part of the zurehbar package, so make it importable
+            # regardless of the caller's working directory (matches the defensive
+            # sys.path insert scripts/export_app_dataset.py already does for itself).
+            sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+            from scripts.export_app_dataset import ASSETS_DIR, FIRESTORE_SEED_PATH, export_all
 
-            project_root = Path(__file__).resolve().parent.parent
-            assets_written = export_to_flutter_assets(CURATED_DIR, project_root / "app" / "assets" / "data")
-            seed_path = export_to_firestore_seed(CURATED_DIR, project_root / "data" / "export" / "firestore_seed.json")
-            print("exported", ", ".join(str(p) for p in assets_written), "and", str(seed_path))
+            export_all()
+            print("exported", ASSETS_DIR, "and", FIRESTORE_SEED_PATH)
         elif stage == "index":
             from zurehbar.index import qdrant_load
 
