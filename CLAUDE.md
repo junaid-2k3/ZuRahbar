@@ -4,15 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-The **data pipeline** for ZuRehbar, an AI assistant for Zu Peshawar (Peshawar BRT) riders. It scrapes
-`transpeshawar.pk` and produces two artefacts:
+A monorepo with three parts:
 
-1. `data/curated/*.json` — the structured route/fare/station dataset, driving a deterministic journey
-   planner and fare calculator.
-2. A Qdrant collection (`zu_rider`) of hybrid dense + BM25 vectors over that dataset plus the site's prose.
+1. **`zurehbar/`, `scripts/`, `data/`** — the data pipeline. It scrapes `transpeshawar.pk` and produces
+   `data/curated/*.json` (the structured route/fare/station dataset, driving a deterministic journey
+   planner and fare calculator) and a Qdrant collection (`zu_rider`) of hybrid dense + BM25 vectors over
+   that dataset plus the site's prose.
+2. **`app/`** — the rider-facing Flutter app (Phase 1: text Q&A, on-device routing, fare calc). It bundles
+   a copy of the curated dataset and runs a Dart port of the routing/fare logic on-device; it never calls
+   Qwen directly.
+3. **`backend/`** — Firebase Functions that proxy Qwen (DashScope/ModelScope) calls for the app: extracting
+   trip intent from a query, and phrasing a computed route/fare answer. Qwen phrases answers — it never
+   computes a route or a price. That split is the core design rule here.
 
-The rider-facing app is a separate Flutter build (see `build_documents/`); this repo is its data source.
-Qwen phrases answers — it never computes a route or a price. That split is the core design rule here.
+`scripts/export_app_dataset.py` is the bridge between part 1 and parts 2/3: it copies `data/curated/*.json`
+into `app/assets/data/` (bundled asset, gitignored, regenerate with the `export-app` pipeline stage below)
+and builds `data/export/firestore_seed.json` for `backend/functions/scripts/seedFirestore.ts` to seed
+Firestore from. Rebuild the app after any pipeline change that touches `data/curated/` — it has no other
+way to pick up a dataset update in Phase 1.
+
+See `docs/superpowers/specs/2026-09-11-zurehbar-phase1-design.md` for the full Phase 1 design and the
+decisions it records.
 
 ## Commands
 
@@ -35,10 +47,19 @@ docker compose up -d                                  # Qdrant on :6333 (require
 .venv/bin/python scripts/smoke_retrieval.py           # retrieval across English/Urdu/Roman Urdu + filters
 .venv/bin/python scripts/ask.py --demo                # rider question -> tools -> grounded context
 .venv/bin/python scripts/reindex_docs.py --changed    # re-embed only documents whose text changed
+.venv/bin/python -m zurehbar.pipeline --only export-app  # data/curated -> app/assets/data + data/export/firestore_seed.json
 
-.venv/bin/pytest                                      # 69 tests, no network or Qdrant needed
+.venv/bin/pytest                                      # 74 tests, no network or Qdrant needed
 .venv/bin/pytest tests/test_plan.py -k transfer       # single test
 ```
+
+```bash
+cd app && flutter pub get && flutter test              # Flutter app: models, routing, planner, UI controller
+cd backend/functions && npm install && npm test        # backend: extractQuery/phraseAnswer, mocked Qwen
+```
+
+The Flutter app's tests don't need `app/assets/data/*.json` to exist (they construct fixtures inline), but
+running the app for real does — run the `export-app` pipeline stage first.
 
 **Never run a full `--recreate` reindex to fix a few documents.** Embedding costs ~13 s/document on CPU
 here (~1 hour for the corpus). `scripts/reindex_docs.py --changed` diffs generated text against stored
@@ -112,8 +133,10 @@ Reconnaissance findings that explain otherwise-puzzling code:
 
 - **No GPS coordinates.** `build_documents/ZuRehbar_Project_Plan_v1.md` MAP-3 requires per-stop coordinates
   for the schematic map, superseding FR-3.3. The site publishes none; they need an external source.
-- **No exporter to Firestore or Drift.** The app bundles a local SQLite (Drift) copy synced from Firestore;
-  nothing here writes either format yet.
+- **Firestore/Drift exporter exists but Firestore itself isn't seeded automatically.** `scripts/export_app_dataset.py`
+  writes both the Flutter asset bundle and a Firestore-seed JSON; `backend/functions/scripts/seedFirestore.ts`
+  writes the latter into a real Firestore project, but that script needs a live service-account credential
+  and is a manual, one-off run (see `backend/README.md`) — no CI/pipeline stage calls it automatically.
 - **Multi-leg fare policy differs from the SRS.** FR-5.3 defaults to sum-of-legs; `calculate_fare` prices
   the whole journey once on total distance, which matches a tap-in/tap-out distance fare. Unresolved
   (Functional SRS Open Issue #2).
