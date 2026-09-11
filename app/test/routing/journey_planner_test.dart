@@ -116,7 +116,7 @@ void main() {
 
   test('reports service_available true when the query time is inside the boarding stop\'s hours', () {
     final routes = [threeStopRoute()];
-    final stations = [_station('a'), _station('b'), _station('c')];
+    final stations = [_station('a'), _station('b', name: 'Mid Stop'), _station('c')];
     final graph = NetworkGraph.build(routes, stations);
     final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
 
@@ -128,7 +128,7 @@ void main() {
 
   test('reports service_available false and warns when the query time is outside published hours', () {
     final routes = [threeStopRoute()];
-    final stations = [_station('a'), _station('b'), _station('c')];
+    final stations = [_station('a'), _station('b', name: 'Mid Stop'), _station('c')];
     final graph = NetworkGraph.build(routes, stations);
     final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
 
@@ -142,7 +142,7 @@ void main() {
 
   test('toJson includes service_available, intermediate_stations, first_bus and last_bus', () {
     final routes = [threeStopRoute()];
-    final stations = [_station('a'), _station('b'), _station('c')];
+    final stations = [_station('a'), _station('b', name: 'Mid Stop'), _station('c')];
     final graph = NetworkGraph.build(routes, stations);
     final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
 
@@ -150,8 +150,35 @@ void main() {
     final leg = (json['legs'] as List).first as Map<String, dynamic>;
 
     expect(json['service_available'], isTrue);
-    expect(leg['intermediate_stations'], ['b']);
+    expect(leg['intermediate_stations'], ['Mid Stop']);
     expect(leg['first_bus'], '06:30');
     expect(leg['last_bus'], '19:00');
+  });
+
+  test('intermediateStations resolves station ids to display names, not raw ids', () {
+    final stations = [_station('a'), _station('mid', name: 'Mid Stop'), _station('c')];
+    final routesWithMidId = [
+      ZuRoute(
+        routeId: 'ER-01',
+        mapLabel: 'BRT Xpress Route 01',
+        serviceType: 'express',
+        routable: true,
+        endpoints: const ['a', 'c'],
+        directions: [
+          RouteDirection(label: 'a to c', originId: 'a', destinationId: 'c', stops: [
+            RouteStop(seq: 0, stationId: 'a', travelTimeToNextSec: 180, distanceToNextKm: 3.0),
+            RouteStop(seq: 1, stationId: 'mid', travelTimeToNextSec: 180, distanceToNextKm: 3.0),
+            RouteStop(seq: 2, stationId: 'c'),
+          ]),
+        ],
+      ),
+    ];
+    final graph = NetworkGraph.build(routesWithMidId, stations);
+    final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
+
+    final plan = planner.plan('a', 'c');
+
+    expect(plan.legs.first.intermediateStations, ['Mid Stop']);
+    expect(plan.legs.first.intermediateStations, isNot(contains('mid')));
   });
 }

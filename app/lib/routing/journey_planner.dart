@@ -333,8 +333,12 @@ class JourneyPlanner {
             rideTimeMin: double.parse(((current['rideSec'] as int) / 60).toStringAsFixed(1)),
             waitTimeMin: double.parse(((current['waitSec'] as int) / 60).toStringAsFixed(1)),
             distanceKm: double.parse((current['distanceKm'] as double).toStringAsFixed(2)),
-            intermediateStations:
-                stations.length > 2 ? stations.sublist(1, stations.length - 1) : const <String>[],
+            intermediateStations: stations.length > 2
+                ? stations
+                    .sublist(1, stations.length - 1)
+                    .map((id) => graph.stationsById[id]?.name ?? id)
+                    .toList()
+                : const <String>[],
             firstBus: current['firstBus'] as String?,
             lastBus: current['lastBus'] as String?,
           ));
