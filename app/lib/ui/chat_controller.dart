@@ -36,6 +36,11 @@ class ChatController extends ChangeNotifier {
       final plan = planner.plan(extracted.origin!, extracted.destination!);
       final reply = await backend.phraseAnswer(plan.toJson());
       messages.add(ChatMessage(isUser: false, text: reply, plan: plan));
+    } catch (_) {
+      messages.add(ChatMessage(
+        isUser: false,
+        text: "I couldn't reach the assistant — check your connection and try again.",
+      ));
     } finally {
       isLoading = false;
       notifyListeners();

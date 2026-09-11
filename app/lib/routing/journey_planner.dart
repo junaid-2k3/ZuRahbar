@@ -45,6 +45,56 @@ bool? _serviceWindow(Leg leg, int atMinutes, bool weekend) {
   return atMinutes >= firstMin && atMinutes <= lastMin;
 }
 
+/// Explains a missing path when the cause is missing data, not a missing bus.
+/// Mirrors zurehbar/graph/plan.py's _coverage_warnings.
+List<String> _coverageWarnings(
+  NetworkGraph graph,
+  StationResolver resolver,
+  String originId,
+  String destinationId,
+) {
+  final warnings = <String>[];
+  for (final stationId in [originId, destinationId]) {
+    final station = graph.stationsById[stationId];
+    final unroutable = <String>{
+      for (final routeId in station?.servedBy ?? const <String>[])
+        if (!(graph.routesById[routeId]?.routable ?? false)) routeId,
+    };
+    for (final route in graph.routesById.values) {
+      final endpointIds = route.endpoints
+          .map((name) => resolver.resolve(name))
+          .where((match) => match.isExact)
+          .map((match) => match.stationId!)
+          .toSet();
+      if (!endpointIds.contains(stationId) || unroutable.contains(route.routeId)) {
+        continue;
+      }
+      final inSequence = route.directions.any(
+        (direction) => direction.stops.any((stop) => stop.stationId == stationId),
+      );
+      if (!inSequence) {
+        unroutable.add(route.routeId);
+      }
+    }
+    if (unroutable.isNotEmpty) {
+      final name = station?.name ?? stationId;
+      final sortedIds = unroutable.toList()..sort();
+      warnings.add(
+        '$name is served by ${sortedIds.join(', ')}, whose stop sequence is not '
+        'published on the website, so those routes are excluded from planning. The trip '
+        'may well be possible on one of them.',
+      );
+    }
+  }
+  if (warnings.isEmpty) {
+    warnings.add(
+      'Some routes have no published stop list and are excluded from planning; '
+      'the trip may still be possible in practice.',
+    );
+  }
+  return warnings;
+}
+
 class Leg {
   final String routeId;
   final String? routeLabel;
@@ -217,12 +267,28 @@ class JourneyPlanner {
     final destinationMatch = resolver.resolve(destination);
 
     if (!originMatch.isExact || !destinationMatch.isExact) {
-      final unresolvedName = !originMatch.isExact ? origin : destination;
+      final originProblem = !originMatch.isExact;
+      final match = originProblem ? originMatch : destinationMatch;
+      final rawName = originProblem ? origin : destination;
+
+      if (match.isAmbiguous) {
+        final candidateNames = match.candidateStationIds
+            .map((id) => graph.stationsById[id]?.name ?? id)
+            .toList();
+        return JourneyPlan(
+          found: false,
+          origin: origin,
+          destination: destination,
+          message: 'Which station did you mean for "$rawName"?',
+          warnings: ['Did you mean: ${candidateNames.join(', ')}?'],
+        );
+      }
+
       return JourneyPlan(
         found: false,
         origin: origin,
         destination: destination,
-        message: 'No Zu station matches "$unresolvedName".',
+        message: 'No Zu station matches "$rawName".',
       );
     }
 
@@ -245,6 +311,7 @@ class JourneyPlanner {
         origin: graph.stationsById[originId]?.name ?? origin,
         destination: graph.stationsById[destinationId]?.name ?? destination,
         message: 'No Zu route connects these two stations in the current dataset.',
+        warnings: _coverageWarnings(graph, resolver, originId, destinationId),
       );
     }
 

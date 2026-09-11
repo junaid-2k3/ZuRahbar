@@ -25,7 +25,7 @@ void main() {
     final dio = Dio();
     dio.httpClientAdapter = _FakeAdapter((path, body) {
       expect(path, '/phraseAnswer');
-      expect(body['found'], true);
+      expect(body['plan']['found'], true);
       return {'reply': 'Take the ER-01, about 26 minutes, Rs. 45.'};
     });
     final client = DioBackendClient(dio, baseUrl: 'https://example.test');

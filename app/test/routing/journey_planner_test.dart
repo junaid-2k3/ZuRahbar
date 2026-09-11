@@ -6,8 +6,14 @@ import 'package:zurehbar_app/routing/network_graph.dart';
 import 'package:zurehbar_app/routing/station_resolver.dart';
 import 'package:zurehbar_app/routing/journey_planner.dart';
 
-Station _station(String id, {String? name}) =>
-    Station(stationId: id, name: name ?? id, aliases: [], urdu: [], pashto: [], servedBy: []);
+Station _station(String id, {String? name, List<String> servedBy = const []}) => Station(
+      stationId: id,
+      name: name ?? id,
+      aliases: [],
+      urdu: [],
+      pashto: [],
+      servedBy: servedBy,
+    );
 
 Fares _fares() => Fares(
       currency: 'PKR',
@@ -180,5 +186,91 @@ void main() {
 
     expect(plan.legs.first.intermediateStations, ['Mid Stop']);
     expect(plan.legs.first.intermediateStations, isNot(contains('mid')));
+  });
+
+  test('an ambiguous origin match asks a clarifying question instead of guessing (FR-2.2)', () {
+    final stations = [
+      _station('university-town', name: 'University Town'),
+      _station('university-road', name: 'University Road'),
+      _station('b', name: 'B Stop'),
+    ];
+    final graph = NetworkGraph.build([], stations);
+    final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
+
+    final plan = planner.plan('University', 'B Stop');
+
+    expect(plan.found, isFalse);
+    expect(plan.message, contains('Which station'));
+    expect(plan.warnings, hasLength(1));
+    expect(plan.warnings.first, contains('University Town'));
+    expect(plan.warnings.first, contains('University Road'));
+  });
+
+  test('coverage warnings explain a missing path caused by a non-routable route', () {
+    final nonRoutableRoute = ZuRoute(
+      routeId: 'ER-99',
+      serviceType: 'express',
+      routable: false,
+      endpoints: const ['A Stop', 'B Stop'],
+      directions: [
+        RouteDirection(label: 'a to b', originId: 'a', destinationId: 'b', stops: [
+          RouteStop(seq: 0, stationId: 'a'),
+          RouteStop(seq: 1, stationId: 'b'),
+        ]),
+      ],
+    );
+    final stations = [
+      _station('a', name: 'A Stop', servedBy: ['ER-99']),
+      _station('b', name: 'B Stop'),
+    ];
+    final graph = NetworkGraph.build([nonRoutableRoute], stations);
+    final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
+
+    final plan = planner.plan('A Stop', 'B Stop');
+
+    expect(plan.found, isFalse);
+    expect(plan.warnings, isNotEmpty);
+    expect(plan.warnings.any((w) => w.contains('ER-99')), isTrue);
+  });
+
+  test('coverage warnings fall back to a generic note when no explanation applies', () {
+    final routeOne = ZuRoute(
+      routeId: 'ER-01',
+      serviceType: 'express',
+      routable: true,
+      endpoints: const ['A Stop', 'C Stop'],
+      directions: [
+        RouteDirection(label: 'a to c', originId: 'a', destinationId: 'c', stops: [
+          RouteStop(seq: 0, stationId: 'a', travelTimeToNextSec: 60, distanceToNextKm: 1.0),
+          RouteStop(seq: 1, stationId: 'c'),
+        ]),
+      ],
+    );
+    final routeTwo = ZuRoute(
+      routeId: 'ER-02',
+      serviceType: 'express',
+      routable: true,
+      endpoints: const ['B Stop', 'D Stop'],
+      directions: [
+        RouteDirection(label: 'b to d', originId: 'b', destinationId: 'd', stops: [
+          RouteStop(seq: 0, stationId: 'b', travelTimeToNextSec: 60, distanceToNextKm: 1.0),
+          RouteStop(seq: 1, stationId: 'd'),
+        ]),
+      ],
+    );
+    final stations = [
+      _station('a', name: 'A Stop', servedBy: ['ER-01']),
+      _station('b', name: 'B Stop', servedBy: ['ER-02']),
+      _station('c', name: 'C Stop', servedBy: ['ER-01']),
+      _station('d', name: 'D Stop', servedBy: ['ER-02']),
+    ];
+    final graph = NetworkGraph.build([routeOne, routeTwo], stations);
+    final planner = JourneyPlanner(graph, StationResolver(stations), _fares());
+
+    final plan = planner.plan('A Stop', 'B Stop');
+
+    expect(plan.found, isFalse);
+    expect(plan.warnings, hasLength(1));
+    expect(plan.warnings.first, contains('Some routes have no published stop list'));
   });
 }

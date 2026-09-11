@@ -37,7 +37,7 @@ class DioBackendClient implements BackendClient {
 
   @override
   Future<String> phraseAnswer(Map<String, dynamic> planJson) async {
-    final response = await dio.post('/phraseAnswer', data: planJson);
+    final response = await dio.post('/phraseAnswer', data: {'plan': planJson});
     return (response.data as Map<String, dynamic>)['reply'] as String;
   }
 }
