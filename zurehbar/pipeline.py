@@ -15,8 +15,9 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from pathlib import Path
 
-STAGES = ("scrape", "build", "docgen", "index")
+STAGES = ("scrape", "build", "docgen", "export-app", "index")
 
 
 def main() -> int:
@@ -55,6 +56,15 @@ def main() -> int:
             sys.argv = ["docgen"]
             if docgen.main() != 0:
                 return 1
+        elif stage == "export-app":
+            # scripts/ is not part of the zurehbar package, so make it importable
+            # regardless of the caller's working directory (matches the defensive
+            # sys.path insert scripts/export_app_dataset.py already does for itself).
+            sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+            from scripts.export_app_dataset import ASSETS_DIR, FIRESTORE_SEED_PATH, export_all
+
+            export_all()
+            print("exported", ASSETS_DIR, "and", FIRESTORE_SEED_PATH)
         elif stage == "index":
             from zurehbar.index import qdrant_load
 

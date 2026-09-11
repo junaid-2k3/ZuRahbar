@@ -5,6 +5,7 @@ __pycache__/
 venv/
 .env
 data/raw/
+data/export/
 qdrant_storage/
 .pytest_cache/
 *.egg-info/
@@ -14,6 +15,7 @@ backend/functions/lib/
 backend/functions/node_modules/
 app/android/local.properties
 app/android/app/google-services.json
+app/assets/data/
 app/build/
 app/.dart_tool/
 app/ios/Flutter/flutter_export_environment.sh
