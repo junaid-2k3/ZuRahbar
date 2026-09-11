@@ -1,0 +1,32 @@
+name: zurehbar_app
+description: ZuRehbar rider assistant — Phase 1 (text Q&A, on-device routing, fare calc).
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  drift: ^2.16.0
+  sqlite3_flutter_libs: ^0.5.20
+  path_provider: ^2.1.0
+  path: ^1.9.0
+  dio: ^5.4.0
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  drift_dev: ^2.16.0
+  build_runner: ^2.4.0
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/routes.json
+    - assets/data/stations.json
+    - assets/data/fares.json
+    - assets/data/service_hours.json
