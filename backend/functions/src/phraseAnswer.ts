@@ -5,7 +5,10 @@ riders. You are given a JSON journey plan already computed by deterministic code
 recompute or contradict its route, fare, or timing numbers. If "found" is false, explain
 the "message" field plainly. Keep the reply short and conversational. If "fare".note
 mentions a caveat (e.g. an express flat-fare exception), mention it briefly rather than
-asserting a fare with false certainty.`;
+asserting a fare with false certainty.
+Reply in plain text: no markdown, no asterisks, no bullet points, no headings — the app
+renders your words as-is. Two or three sentences. Do not offer anything the app cannot do:
+there is no live bus tracking, no booking, no map and no follow-up service.`;
 
 export interface JourneyPlanPayload {
   found: boolean;

@@ -25,6 +25,14 @@ const _qwenApiKey = String.fromEnvironment('QWEN_API_KEY');
 const _qwenBaseUrl = String.fromEnvironment('QWEN_API_BASE_URL');
 const _qwenModel = String.fromEnvironment('QWEN_MODEL');
 
+// Alibaba Model Studio's international endpoint, which takes an `sk-…` key.
+// It replaced ModelScope (`ms-…`, api-inference.modelscope.cn) as the default
+// because that host is unreachable from Peshawar — 100% packet loss on both
+// home wifi and 4G — so it could never answer a rider here. Both are
+// OpenAI-compatible; override either with --dart-define.
+const _defaultQwenBaseUrl = 'https://dashscope-intl.aliyuncs.com/compatible-mode/v1';
+const _defaultQwenModel = 'qwen-plus';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -58,9 +66,8 @@ Future<void> main() async {
             receiveTimeout: const Duration(seconds: 30),
           )),
           apiKey: _qwenApiKey,
-          baseUrl:
-              _qwenBaseUrl.isNotEmpty ? _qwenBaseUrl : 'https://api-inference.modelscope.cn/v1',
-          model: _qwenModel.isNotEmpty ? _qwenModel : 'Qwen/Qwen2.5-72B-Instruct',
+          baseUrl: _qwenBaseUrl.isNotEmpty ? _qwenBaseUrl : _defaultQwenBaseUrl,
+          model: _qwenModel.isNotEmpty ? _qwenModel : _defaultQwenModel,
         );
   final chatController = ChatController(backend: backend, planner: planner);
 
