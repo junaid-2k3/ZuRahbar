@@ -126,3 +126,8 @@ app.*.map.json
 
 # Web support:
 lib/generated_plugin_registrant.dart
+
+# Gradle output and caches under android/ (not covered by the /build/ rule above)
+/android/build/
+/android/.gradle/
+/android/.kotlin/
