@@ -1,4 +1,16 @@
-# ZuRehbar dataset pipeline
+# ZuRehbar
+
+A monorepo with three parts:
+
+- **`zurehbar/`, `scripts/`, `data/`** — the dataset pipeline described below.
+- **`app/`** — the rider-facing Flutter app (on-device routing and fares, Qwen
+  for wording only). See [`app/README.md`](app/README.md).
+- **`backend/`** — Firebase Functions that proxy Qwen. Currently dormant: the app
+  calls Qwen directly, see the deviation note in
+  [the Phase 1 design spec](docs/superpowers/specs/2026-09-11-zurehbar-phase1-design.md).
+  See [`backend/README.md`](backend/README.md).
+
+## The dataset pipeline
 
 Scrapes [transpeshawar.pk](https://transpeshawar.pk/), extracts the Zu Peshawar
 (Peshawar BRT) route, fare and service data, and produces two things ZuRehbar
