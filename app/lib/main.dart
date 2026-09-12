@@ -81,7 +81,7 @@ class _DatasetMissingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ZuRehbar',
+      title: 'Zu Rahbar',
       home: Scaffold(
         body: Center(
           child: Padding(
@@ -99,6 +99,10 @@ class _DatasetMissingApp extends StatelessWidget {
   }
 }
 
+/// The logo's green. Kept in step with `brand_green` in
+/// android/app/src/main/res/values/colors.xml.
+const _brandGreen = Color(0xFFA5D19C);
+
 class ZuRehbarApp extends StatelessWidget {
   final ChatController chatController;
   final StationResolver resolver;
@@ -108,9 +112,15 @@ class ZuRehbarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ZuRehbar',
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.green),
-      darkTheme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.green, brightness: Brightness.dark),
+      title: 'Zu Rahbar',
+      // Seeded from the logo's green so the UI and the launcher icon read as
+      // one thing (UI-2.2).
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: _brandGreen),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: _brandGreen,
+        brightness: Brightness.dark,
+      ),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
