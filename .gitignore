@@ -9,7 +9,7 @@ data/export/
 qdrant_storage/
 .pytest_cache/
 *.egg-info/
-build_documents/qwen_api.txt
+build_documents/qwen_api*.txt
 backend/functions/.env
 backend/functions/lib/
 backend/functions/node_modules/

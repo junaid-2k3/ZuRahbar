@@ -20,8 +20,8 @@ if [ -z "$key" ]; then
   exit 2
 fi
 
-base_url=${QWEN_API_BASE_URL:-https://api-inference.modelscope.cn/v1}
-model=${QWEN_MODEL:-Qwen/Qwen2.5-72B-Instruct}
+base_url=${QWEN_API_BASE_URL:-https://dashscope-intl.aliyuncs.com/compatible-mode/v1}
+model=${QWEN_MODEL:-qwen-plus}
 
 echo "endpoint: $base_url"
 echo "model:    $model"
