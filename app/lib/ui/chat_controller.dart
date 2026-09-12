@@ -63,13 +63,16 @@ class ChatController extends ChangeNotifier {
       var degraded = backend == null;
       ExtractedQuery extracted;
       if (backend == null) {
-        extracted = LocalAssistant.extract(rawText);
+        extracted = _extractLocally(rawText);
       } else {
         try {
           extracted = await backend!.extractQuery(rawText);
-        } catch (_) {
+        } catch (error) {
+          // Worth printing: from the outside a blocked endpoint and a bad key
+          // look identical — both just produce an on-device answer.
+          debugPrint('ZuRehbar: Qwen extraction failed, answering on-device: $error');
           degraded = true;
-          extracted = LocalAssistant.extract(rawText);
+          extracted = _extractLocally(rawText);
         }
       }
 
@@ -125,6 +128,13 @@ class ChatController extends ChangeNotifier {
     }
   }
 
+  /// The rule-based extractor, told which names are real stops so it can pick
+  /// the right "to" in a sentence containing several.
+  ExtractedQuery _extractLocally(String rawText) => LocalAssistant.extract(
+        rawText,
+        isStop: (name) => planner.resolver.resolve(name).isExact,
+      );
+
   /// A follow-up that names no origin reuses the session's. "…to Hayatabad
   /// from there" hangs off the last *destination*; anything else falls back to
   /// the last origin (FR-7.2).
@@ -150,7 +160,8 @@ class ChatController extends ChangeNotifier {
     } else {
       try {
         reply = await backend!.phraseAnswer(plan.toJson());
-      } catch (_) {
+      } catch (error) {
+        debugPrint('ZuRehbar: Qwen phrasing failed, wording on-device: $error');
         offline = true;
         reply = LocalAssistant.phrase(plan);
       }
