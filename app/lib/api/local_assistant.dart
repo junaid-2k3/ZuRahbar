@@ -20,22 +20,44 @@ class LocalAssistant implements BackendClient {
 
   // --- Extraction -----------------------------------------------------------
 
-  /// Filler that precedes the origin in the way riders actually type.
-  /// Longest first, so "how do i get from" wins over "from".
+  /// Filler that precedes the trip in the way riders actually type. Longest
+  /// first, so "how do i get from" wins over "from" and "i have to go to"
+  /// wins over "i have to" — otherwise "I have to Fast University to Saddar"
+  /// splits at the wrong "to" and the origin comes out as "I have".
   static final _leadIns = [
-    'what is the fare from',
     'how much is the fare from',
+    'what is the fare from',
     'how do i get from',
     'how do i go from',
     'how to get from',
     'how to go from',
     'i want to go from',
     'i need to go from',
+    'i have to go from',
+    'i want to go to',
+    'i need to go to',
+    'i have to go to',
+    'how do i get to',
+    'how do i go to',
+    'how to get to',
+    'how to go to',
+    'i am going to',
+    'i want to go',
+    'i need to go',
+    'i have to go',
+    "i'm going to",
+    'im going to',
+    'i want to',
+    'i need to',
+    'i have to',
     'take me from',
+    'take me to',
+    'get me to',
+    'going to',
+    'travel from',
     'route from',
     'fare from',
     'bus from',
-    'travel from',
     'go from',
     'from',
   ];
@@ -47,6 +69,10 @@ class LocalAssistant implements BackendClient {
     r'\s(?:to|se|say|tak|towards|→|->|سے|تک)\s',
     caseSensitive: false,
   );
+
+  /// The reversed phrasing — "Saddar Bazar from Fast University" — where the
+  /// destination comes first and the word between them points backwards.
+  static final reverseSeparator = RegExp(r'\s(?:from|se)\s', caseSensitive: false);
 
   static final _fareWords = RegExp(r'fare|kiraya|kirya|price|cost|کرایہ', caseSensitive: false);
 
@@ -64,7 +90,12 @@ class LocalAssistant implements BackendClient {
 
   /// Rule-based version of the extractQuery prompt. Deliberately conservative:
   /// it returns null rather than guess, and the caller then asks the rider.
-  static ExtractedQuery extract(String rawText) {
+  ///
+  /// [isStop] lets the caller say whether a candidate name is a real stop. A
+  /// sentence often contains more than one "to", so without it the split has
+  /// to guess and picks the first — which is wrong for "... to Fast University
+  /// to Saddar Bazar". With it, the split that lands on two real stops wins.
+  static ExtractedQuery extract(String rawText, {bool Function(String)? isStop}) {
     var text = rawText.trim();
     final intent = _fareWords.hasMatch(text) ? 'fare' : 'route';
 
@@ -77,9 +108,18 @@ class LocalAssistant implements BackendClient {
       }
     }
 
-    final match = separator.firstMatch(text);
-    if (match == null) {
-      // No separator: treat the whole thing as a destination ("get me to Saddar")
+    final matches = separator.allMatches(text).toList();
+    if (matches.isEmpty) {
+      // Nothing pointing forwards. Try the reversed phrasing before giving up.
+      final reversed = reverseSeparator.firstMatch(text);
+      if (reversed != null) {
+        return ExtractedQuery(
+          origin: _cleanSide(text.substring(reversed.end)),
+          destination: _cleanSide(text.substring(0, reversed.start)),
+          intent: intent,
+        );
+      }
+      // Otherwise treat the whole thing as a destination ("get me to Saddar")
       // and let the caller supply the origin from session context.
       return ExtractedQuery(
         origin: null,
@@ -88,9 +128,24 @@ class LocalAssistant implements BackendClient {
       );
     }
 
+    var best = matches.first;
+    if (matches.length > 1 && isStop != null) {
+      var bestScore = -1;
+      for (final match in matches) {
+        final origin = _cleanSide(text.substring(0, match.start));
+        final destination = _cleanSide(text.substring(match.end));
+        final score = (origin != null && isStop(origin) ? 1 : 0) +
+            (destination != null && isStop(destination) ? 1 : 0);
+        if (score > bestScore) {
+          bestScore = score;
+          best = match;
+        }
+      }
+    }
+
     return ExtractedQuery(
-      origin: _cleanSide(text.substring(0, match.start)),
-      destination: _cleanSide(text.substring(match.end)),
+      origin: _cleanSide(text.substring(0, best.start)),
+      destination: _cleanSide(text.substring(best.end)),
       intent: intent,
     );
   }

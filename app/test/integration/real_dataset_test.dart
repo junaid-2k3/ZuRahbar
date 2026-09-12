@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:zurehbar_app/api/local_assistant.dart';
 import 'package:zurehbar_app/models/fares.dart';
 import 'package:zurehbar_app/models/station.dart';
 import 'package:zurehbar_app/models/zu_route.dart';
@@ -86,6 +87,39 @@ void main() {
         if (resolver.resolve(station.name).stationId != station.stationId) station.name,
     ];
     expect(failures, isEmpty);
+  });
+
+  test('a sentence with several "to"s splits on the right one', () {
+    // Typed on a real phone during testing: the first " to " is inside the
+    // filler, and both real stop names follow it.
+    final extracted = LocalAssistant.extract(
+      'I have to Fast University to Saddar Bazar',
+      isStop: (name) => resolver.resolve(name).isExact,
+    );
+    expect(extracted.origin, 'Fast University');
+    expect(extracted.destination, 'Saddar Bazar');
+
+    final plan = planner.plan(extracted.origin!, extracted.destination!);
+    expect(plan.found, isTrue);
+    expect(plan.fare, isNotNull);
+  });
+
+  test('other ways riders phrase the same trip all land on the same stops', () {
+    for (final query in [
+      'how do I get from Fast University to Saddar Bazar',
+      'I want to go to Saddar Bazar from Fast University',
+      'Fast University se Saddar Bazar',
+      'fast uni to saddar',
+    ]) {
+      final extracted = LocalAssistant.extract(
+        query,
+        isStop: (name) => resolver.resolve(name).isExact,
+      );
+      expect(extracted.origin, isNotNull, reason: 'no origin from "$query"');
+      expect(extracted.destination, isNotNull, reason: 'no destination from "$query"');
+      final plan = planner.plan(extracted.origin!, extracted.destination!);
+      expect(plan.found, isTrue, reason: '"$query" did not route');
+    }
   });
 
   test('off-hours queries still route and say the service is closed (FR-9.3)', () {

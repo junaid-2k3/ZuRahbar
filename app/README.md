@@ -36,9 +36,24 @@ Check the key, endpoint and model actually answer before you rely on them:
 ```
 
 The bundled key is a ModelScope one (`ms-…`), so it goes with the default
-`https://api-inference.modelscope.cn/v1`. A DashScope key (`sk-…`) needs
-`--dart-define=QWEN_API_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1`
-and a DashScope model name.
+`https://api-inference.modelscope.cn/v1`.
+
+**That host is unreachable from Peshawar** — both home wifi and a 4G phone get
+100% packet loss to it, so on this network the app always answers on-device.
+Alibaba's international endpoint *is* reachable and needs a Model Studio key
+(`sk-…`, Singapore region):
+
+```bash
+flutter run \
+  --dart-define=QWEN_API_KEY=sk-... \
+  --dart-define=QWEN_API_BASE_URL=https://dashscope-intl.aliyuncs.com/compatible-mode/v1 \
+  --dart-define=QWEN_MODEL=qwen-plus
+```
+
+`scripts/check_qwen.sh` takes the same three as environment variables, so try a
+key there before rebuilding. When a call does fail, the reason is logged —
+`adb logcat | grep ZuRehbar` distinguishes a blocked host from a rejected key,
+which look identical from inside the app.
 
 ## Build an APK
 
