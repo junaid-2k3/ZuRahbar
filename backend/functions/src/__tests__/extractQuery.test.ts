@@ -29,6 +29,17 @@ describe("extractQueryHandler", () => {
     expect(result.destination).toBe("Hayatabad");
   });
 
+  it("unwraps a JSON object fenced in markdown", async () => {
+    (qwen.callQwen as jest.Mock).mockResolvedValue(
+      'Sure!\n```json\n{"origin": "Saddar", "destination": "Chamkani", "intent": "route"}\n```'
+    );
+
+    const result = await extractQueryHandler({ text: "saddar to chamkani" });
+
+    expect(result.origin).toBe("Saddar");
+    expect(result.destination).toBe("Chamkani");
+  });
+
   it("throws if Qwen's reply is not valid JSON", async () => {
     (qwen.callQwen as jest.Mock).mockResolvedValue("not json");
 

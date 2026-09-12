@@ -17,6 +17,10 @@ import 'package:zurehbar_app/ui/home_screen.dart';
 //   flutter run --dart-define=QWEN_API_KEY=...
 // backend/ is untouched and dormant; swap back to DioBackendClient (see
 // api/backend_client.dart) once a backend host is available again.
+//
+// With no key the app still runs: routing and fares are computed on-device
+// anyway, and LocalAssistant words the answer. Only the conversational
+// phrasing and free-form query parsing get simpler.
 const _qwenApiKey = String.fromEnvironment('QWEN_API_KEY');
 const _qwenBaseUrl = String.fromEnvironment('QWEN_API_BASE_URL');
 const _qwenModel = String.fromEnvironment('QWEN_MODEL');
@@ -24,41 +28,75 @@ const _qwenModel = String.fromEnvironment('QWEN_MODEL');
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (_qwenApiKey.isEmpty) {
-    throw StateError(
-      'QWEN_API_KEY was not provided. Run with '
-      '--dart-define=QWEN_API_KEY=<your key>.',
+  final LoadedDataset dataset;
+  try {
+    final db = AppDatabase(openConnection());
+    await DatasetRepository.seedIfEmpty(
+      db,
+      stationsJson: await rootBundle.loadString('assets/data/stations.json'),
+      routesJson: await rootBundle.loadString('assets/data/routes.json'),
+      faresJson: await rootBundle.loadString('assets/data/fares.json'),
+      serviceHoursJson: await rootBundle.loadString('assets/data/service_hours.json'),
     );
+    dataset = await DatasetRepository.loadDomainModels(db);
+  } catch (error, stackTrace) {
+    // assets/data/ is gitignored and generated. Say so on screen rather than
+    // dying to a blank window.
+    debugPrint('ZuRehbar: dataset failed to load: $error\n$stackTrace');
+    runApp(const _DatasetMissingApp());
+    return;
   }
-
-  final db = AppDatabase(openConnection());
-  await DatasetRepository.seedIfEmpty(
-    db,
-    stationsJson: await rootBundle.loadString('assets/data/stations.json'),
-    routesJson: await rootBundle.loadString('assets/data/routes.json'),
-    faresJson: await rootBundle.loadString('assets/data/fares.json'),
-    serviceHoursJson: await rootBundle.loadString('assets/data/service_hours.json'),
-  );
-  final dataset = await DatasetRepository.loadDomainModels(db);
 
   final graph = NetworkGraph.build(dataset.routes, dataset.stations);
   final resolver = StationResolver(dataset.stations);
   final planner = JourneyPlanner(graph, resolver, dataset.fares);
-  final backend = QwenDirectClient(
-    Dio(),
-    apiKey: _qwenApiKey,
-    baseUrl: _qwenBaseUrl.isNotEmpty ? _qwenBaseUrl : 'https://api-inference.modelscope.cn/v1',
-    model: _qwenModel.isNotEmpty ? _qwenModel : 'Qwen/Qwen2.5-72B-Instruct',
-  );
+  final backend = _qwenApiKey.isEmpty
+      ? null
+      : QwenDirectClient(
+          Dio(BaseOptions(
+            connectTimeout: const Duration(seconds: 10),
+            receiveTimeout: const Duration(seconds: 30),
+          )),
+          apiKey: _qwenApiKey,
+          baseUrl:
+              _qwenBaseUrl.isNotEmpty ? _qwenBaseUrl : 'https://api-inference.modelscope.cn/v1',
+          model: _qwenModel.isNotEmpty ? _qwenModel : 'Qwen/Qwen2.5-72B-Instruct',
+        );
   final chatController = ChatController(backend: backend, planner: planner);
 
-  runApp(ZuRehbarApp(chatController: chatController));
+  runApp(ZuRehbarApp(chatController: chatController, resolver: resolver));
+}
+
+/// Shown when the bundled dataset could not be read at startup.
+class _DatasetMissingApp extends StatelessWidget {
+  const _DatasetMissingApp();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'ZuRehbar',
+      home: Scaffold(
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              'The Zu dataset could not be loaded.\n\n'
+              'Regenerate it and rebuild:\n'
+              'python -m zurehbar.pipeline --only export-app',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class ZuRehbarApp extends StatelessWidget {
   final ChatController chatController;
+  final StationResolver resolver;
 
-  const ZuRehbarApp({super.key, required this.chatController});
+  const ZuRehbarApp({super.key, required this.chatController, required this.resolver});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +109,7 @@ class ZuRehbarApp extends StatelessWidget {
         child: Scaffold(
           body: TabBarView(
             children: [
-              HomeScreen(controller: chatController),
+              HomeScreen(controller: chatController, resolver: resolver),
               const Center(child: Text('Saved Routes — coming in Phase 4')),
               const Center(child: Text('Settings — coming in Phase 4')),
             ],

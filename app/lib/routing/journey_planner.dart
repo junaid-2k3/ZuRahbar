@@ -113,6 +113,12 @@ class Leg {
   final String? firstBus;
   final String? lastBus;
 
+  /// Published headway band for the route, carried on the leg so an answer can
+  /// state bus frequency (FR-6.2). The Python Leg has no equivalent field --
+  /// this is a deliberate addition, not a parity gap.
+  final int? headwayMinLow;
+  final int? headwayMinHigh;
+
   Leg({
     required this.routeId,
     this.routeLabel,
@@ -130,6 +136,8 @@ class Leg {
     this.intermediateStations = const [],
     this.firstBus,
     this.lastBus,
+    this.headwayMinLow,
+    this.headwayMinHigh,
   });
 
   Map<String, dynamic> toJson() => {
@@ -149,6 +157,8 @@ class Leg {
         'intermediate_stations': intermediateStations,
         'first_bus': firstBus,
         'last_bus': lastBus,
+        'headway_min_low': headwayMinLow,
+        'headway_min_high': headwayMinHigh,
       };
 }
 
@@ -236,9 +246,13 @@ FareBreakdown calculateFare(List<Leg> legs, Fares fares) {
   }
   fare = fare < fares.singleJourneyTicketPkr ? fare : fares.singleJourneyTicketPkr;
 
-  var note = 'About $distanceKm km of travel falls in fare band $bandIndex, '
-      'Rs. $fare. Distances are interpolated from published route lengths, so '
-      'treat the band as approximate when a trip sits near a boundary.';
+  var note = bandIndex != null
+      ? 'About $distanceKm km of travel falls in fare band $bandIndex, Rs. $fare. '
+          'Distances are interpolated from published route lengths, so treat the band '
+          'as approximate when a trip sits near a boundary.'
+      : 'About $distanceKm km of travel is past the last published fare band, so the '
+          'top fare of Rs. $fare applies. Distances are interpolated from published '
+          'route lengths, so treat this as approximate.';
   if (legs.any((leg) => leg.serviceType == 'express' || leg.serviceType == 'super_express')) {
     note += ' This trip uses an express service; express buses on feeder routes are charged '
         'a flat Rs. ${fares.feederExpressFlatFarePkr}, so the fare may be that instead. '
@@ -378,6 +392,8 @@ class JourneyPlanner {
           'stations': <String>[data.stationId],
           'firstBus': data.firstBusMonThu,
           'lastBus': data.lastBusMonThu,
+          'headwayMinLow': route?.headwayMinLow,
+          'headwayMinHigh': route?.headwayMinHigh,
         };
       } else if (edge.kind == 'ride' && current != null) {
         current['rideSec'] = (current['rideSec'] as int) + edge.weightSec;
@@ -408,6 +424,8 @@ class JourneyPlanner {
                 : const <String>[],
             firstBus: current['firstBus'] as String?,
             lastBus: current['lastBus'] as String?,
+            headwayMinLow: current['headwayMinLow'] as int?,
+            headwayMinHigh: current['headwayMinHigh'] as int?,
           ));
         }
         current = null;

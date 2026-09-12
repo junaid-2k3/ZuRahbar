@@ -68,10 +68,19 @@ class QwenDirectClient implements BackendClient {
   Future<ExtractedQuery> extractQuery(String text) async {
     final reply = await _callQwen(_extractQuerySystemPrompt, text);
     try {
-      return ExtractedQuery.fromJson(jsonDecode(reply) as Map<String, dynamic>);
+      return ExtractedQuery.fromJson(jsonDecode(jsonObjectIn(reply)) as Map<String, dynamic>);
     } on FormatException {
       throw Exception('Qwen returned an unparseable extraction response');
     }
+  }
+
+  /// Asked for "ONLY a JSON object", chat models still wrap it in a ```json
+  /// fence or a sentence often enough to matter. Take the outermost braces.
+  static String jsonObjectIn(String reply) {
+    final start = reply.indexOf('{');
+    final end = reply.lastIndexOf('}');
+    if (start == -1 || end <= start) return reply;
+    return reply.substring(start, end + 1);
   }
 
   @override

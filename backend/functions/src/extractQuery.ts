@@ -15,12 +15,23 @@ export interface ExtractQueryResult {
   intent: string;
 }
 
+/**
+ * Asked for "ONLY a JSON object", chat models still wrap it in a ```json fence
+ * or a sentence often enough to matter. Take the outermost braces.
+ */
+export function jsonObjectIn(reply: string): string {
+  const start = reply.indexOf("{");
+  const end = reply.lastIndexOf("}");
+  if (start === -1 || end <= start) return reply;
+  return reply.slice(start, end + 1);
+}
+
 export async function extractQueryHandler(
   request: ExtractQueryRequest
 ): Promise<ExtractQueryResult> {
   const reply = await callQwen(SYSTEM_PROMPT, request.text);
   try {
-    return JSON.parse(reply) as ExtractQueryResult;
+    return JSON.parse(jsonObjectIn(reply)) as ExtractQueryResult;
   } catch {
     throw new Error("Qwen returned an unparseable extraction response");
   }

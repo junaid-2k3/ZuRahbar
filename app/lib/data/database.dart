@@ -59,4 +59,9 @@ class AppDatabase extends _$AppDatabase {
   int get schemaVersion => 1;
 }
 
+/// In memory on purpose. The dataset ships as a bundled asset and is reseeded
+/// at every launch (a fraction of a second), so a file-backed database would
+/// buy nothing in Phase 1 except a staleness problem: an app update carrying a
+/// newer asset would keep serving the old rows. Give this a real file only
+/// once there is an on-device refresh path to invalidate it.
 QueryExecutor openConnection() => NativeDatabase.memory();
