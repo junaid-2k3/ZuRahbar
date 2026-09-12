@@ -41,6 +41,25 @@ void main() {
     expect(result.intent, 'route');
   });
 
+  test('extractQuery unwraps a JSON object fenced in markdown', () async {
+    final dio = Dio();
+    dio.httpClientAdapter = _FakeAdapter((options) => _completionOf(
+          'Sure!\n```json\n{"origin": "Saddar", "destination": "Chamkani", '
+          '"intent": "route"}\n```',
+        ));
+    final client = QwenDirectClient(
+      dio,
+      apiKey: 'test-key',
+      baseUrl: 'https://example.test',
+      model: 'qwen-test-model',
+    );
+
+    final result = await client.extractQuery('saddar to chamkani');
+
+    expect(result.origin, 'Saddar');
+    expect(result.destination, 'Chamkani');
+  });
+
   test('extractQuery throws when Qwen replies with non-JSON content', () async {
     final dio = Dio();
     dio.httpClientAdapter = _FakeAdapter((options) => _completionOf('not json'));

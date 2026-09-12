@@ -54,9 +54,19 @@ docker compose up -d                                  # Qdrant on :6333 (require
 ```
 
 ```bash
-cd app && flutter pub get && flutter test              # Flutter app: models, routing, planner, UI controller
+cd app && flutter pub get && flutter test              # Flutter app: models, routing, planner, UI, integration
+cd app && flutter run --dart-define=QWEN_API_KEY="$(cat ../build_documents/qwen_api.txt)"
+./scripts/check_qwen.sh                               # does the key/endpoint/model actually answer?
 cd backend/functions && npm install && npm test        # backend: extractQuery/phraseAnswer, mocked Qwen
 ```
+
+**A cold Android build needs `kotlin.project.persistent.dir` set in
+`~/.gradle/gradle.properties`**, not in `app/android/gradle.properties`. The Kotlin Gradle plugin
+writes scratch files under each project's `.kotlin` dir, and one project in a Flutter Android build
+is Flutter's own Gradle plugin inside the (root-owned) SDK install; a project's own
+`gradle.properties` is not visible to included builds. Symptom: `:gradle:compileKotlin` fails with
+`NoSuchFileException: /usr/lib/flutter/.../gradle/.kotlin/sessions/....salive`. Details in
+`app/README.md`.
 
 The Flutter app's tests don't need `app/assets/data/*.json` to exist (they construct fixtures inline), but
 running the app for real does — run the `export-app` pipeline stage first.
@@ -64,6 +74,20 @@ running the app for real does — run the `export-app` pipeline stage first.
 **Never run a full `--recreate` reindex to fix a few documents.** Embedding costs ~13 s/document on CPU
 here (~1 hour for the corpus). `scripts/reindex_docs.py --changed` diffs generated text against stored
 payloads and re-embeds only what moved. Point IDs are UUID5 of the document id, so upserts replace in place.
+
+**The app answers with no network and no API key.** `app/lib/api/local_assistant.dart` is a
+deterministic stand-in for both Qwen calls — rule-based origin/destination extraction and rule-based
+phrasing over the computed plan. `ChatController` uses it when the build carries no `QWEN_API_KEY`
+and falls back to it when a Qwen call throws mid-session, so routing and fares (which are on-device
+anyway) never go dark. Answers worded this way say so on the card. That is NFR-1's graceful
+degradation, and it is also what makes the app demoable without a key.
+
+**Stop names are matched fuzzily in Dart, not in Python.** `app/lib/routing/station_resolver.dart`
+scores every station's canonical name, Roman Urdu aliases and Urdu/Pashto forms against the query
+(folded string edit distance, plus a token score where a prefix counts as a near-hit), which is what
+lands "uni town" on University Town and "hashnagri" on Hashtnagri (FR-1.3). `naming.resolve` on the
+Python side stays exact-alias-only — it is normalising a scrape, not guessing at a rider's typing.
+Folded names are indexed once at construction; folding per keystroke made autocomplete visibly laggy.
 
 ## Architecture
 
