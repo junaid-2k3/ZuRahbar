@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final messages = widget.controller.messages;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ZuRehbar'),
+        title: const Text('Zu Rahbar'),
         actions: [
           IconButton(
             tooltip: _structuredEntry ? 'Ask in your own words' : 'Enter From / To',
@@ -152,7 +152,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.directions_bus, size: 48, color: theme.colorScheme.primary),
+            // The brand glyph, tinted to the theme so it stays legible in
+            // light mode as well as dark.
+            Image.asset(
+              'assets/brand/zu_bus.png',
+              height: 56,
+              color: theme.colorScheme.primary,
+            ),
             const SizedBox(height: 12),
             Text('Ask about any Zu trip', style: theme.textTheme.titleMedium),
             const SizedBox(height: 16),

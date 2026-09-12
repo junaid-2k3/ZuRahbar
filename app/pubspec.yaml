@@ -30,3 +30,5 @@ flutter:
     - assets/data/stations.json
     - assets/data/fares.json
     - assets/data/service_hours.json
+    - assets/brand/zu_bus.png
+    - assets/brand/zu_logo.png

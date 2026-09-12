@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive icon (API 26+): the launcher masks this to whatever shape it
+     uses, so the bus sits well inside the safe zone and the ground colour
+     fills the rest. Older Android falls back to the flat mipmap PNGs. -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/brand_ground" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>

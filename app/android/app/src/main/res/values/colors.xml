@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The logo's own two colours, so the launcher icon and the splash match
+         the artwork exactly. Regenerate the art with
+         scripts/make_app_icons.py if the logo changes. -->
+    <color name="brand_ground">#111610</color>
+    <color name="brand_green">#A5D19C</color>
+</resources>
